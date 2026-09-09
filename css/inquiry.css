@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* **********************************************************
+■　Inquiry
+********************************************************** */
+#inquiry #container .wrap {
+  width: 1024px;
+}
+#inquiry h2 img {
+  filter: brightness(0%);
+}
+#inquiry .main h3 {
+    font-size:1.2rem;
+}
+#inquiry .main p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+#inquiry table {
+  width: 100%;
+  margin: 2rem auto;
+  font-size: 1rem;
+}
+#inquiry table th, #inquiry table td {
+  text-align: left;
+  padding: .5em;
+}
+#inquiry table th {
+  font-weight: 500;
+}
+#inquiry .main span.req {
+  margin-left: .3em;
+  font-size: .8em;
+  color: #eb6d9a;
+}
+#inquiry .main span.error {
+  color: #dd3344;
+    display: block;
+    margin-top: .3em;
+}
+#inquiry .btn {
+  color: #fff;
+  background: #eb6d9a;
+  font-size: 18px;
+  padding: .8em 1em .8em 1em;
+  border: 1px solid #eb6d9a;
+  border-radius: .3em;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+  cursor: pointer;
+    min-width:10em
+}
+#inquiry .btn:hover {
+  color: #eb6d9a;
+  background: #fff;
+}
+#inquiry .btn-secondary{
+    margin-bottom: 1em
+}
+#inquiry input[type="text"],#inquiry textarea {
+  border-radius: .2em;
+    -moz-border-radius: .2em;
+    -webkit-border-radius: .2em;
+    border: 0;
+    background: #f8f8f8;
+    padding:.8em;
+    width:100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: 0;
+}
+/*+++++++++++++++++++++++++++
+mediaクエリ【PC】
++++++++++++++++++++++++++++*/
+@media (max-width: 1023px) {
+#inquiry #container .wrap {
+  width: 100%;
+}
+}
+@media (min-width: 751px) {
+  #inquiry .main .wrap {
+    width: 1024px;
+  }
+  #inquiry table th {
+     width:30%
+  }
+  #inquiry table td {
+     width:70%
+  }
+#inquiry input.tel{
+    width:10em;
+}
+}
+/*+++++++++++++++++++++++++++
+mediaクエリ【スマホ】
++++++++++++++++++++++++++++*/
+@media (max-width: 750px) {
+  #inquiry table {
+    margin: 5vw auto;
+    font-size: 3.6vw;
+  }
+#inquiry .main h3 {
+    font-size:4vw;
+}
+  #inquiry table th {
+      padding:.3em 0;
+    font-size: 4vw;
+  }
+  #inquiry table td {
+      padding:.3em 0 .7em 0;
+  }
+ #inquiry.inquiry2 table td p{
+      padding:.3em;
+     font-size:3.6vw;
+     border:1px solid #dfdfdf;
+  border-radius: .2em;
+    -moz-border-radius: .2em;
+    -webkit-border-radius: .2em;
+  }
+  #inquiry table th, #inquiry table td {
+    display: block;
+    width: 100%;
+  }
+  #inquiry .btn {
+    font-size: 4vw;
+  border-radius:2em;
+      width:80%
+  }
+}
