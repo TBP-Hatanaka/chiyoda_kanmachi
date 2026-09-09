@@ -16,8 +16,8 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png"/>
-<link href="<?php echo esc_url( home_url( '/css/base.css' ) ) ?>" rel="stylesheet"/>
-<link href="<?php echo esc_url( home_url( '/css/top.css' ) ) ?>" rel="stylesheet"/>
+<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/base.css' ); ?>" rel="stylesheet"/>
+<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/top.css' ); ?>" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"> 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RYS991XQ"></script>
@@ -33,12 +33,12 @@ gtag('config', 'G-D3RYS991XQ');
 <?php include "inc/header.php"; ?>
 <article class="main">
   <section id="mvarea">
-      <img src="<?php echo esc_url( home_url( '/img/common/mv.jpg' ) ) ?>" alt="千代田写真" class="pc"><img src="./img/<?php echo esc_url( home_url( '/img/common/mv_sp.jpg' ) ) ?>" alt="千代田写真" class="sp">
+      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv.jpg' ); ?>" alt="千代田写真" class="pc"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv_sp.jpg' ); ?>" alt="千代田写真" class="sp">
       <p>写真協力：千代田区広報広聴課</p>
   </section>
   <section id="news">
     <div class="wrap">
-      <h2><strong><img src="<?php echo esc_url( home_url( '/img/ttl/ttl_news.png' ) ) ?>" alt="News"></strong></h2>
+      <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News"></strong></h2>
           <!--↓畳む内容が無い場合はfaq2、div内のaごとを複製しても、あるいはdivごと複製してもOK-->
 
 <!-お知らせ追加位置-->
@@ -337,4 +337,3 @@ gtag('config', 'G-D3RYS991XQ');
 <script src="./js/common.js"></script>
 </body>
 </html>
-
