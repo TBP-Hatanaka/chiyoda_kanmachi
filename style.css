@@ -1045,7 +1045,6 @@ a.btn{
 }
 /*お問い合わせ*/
 .main #top_inq .wrap {
-  background-image: url("./img/top/bg_top_inquiry.jpg");
   background-position: center center;
   background-size: cover;
 }
@@ -1198,6 +1197,8 @@ mediaクエリ【スマホ】
   margin: 3rem auto 0;
   border: 1px solid #222;
   overflow: hidden;
+  background-color: #fff;
+  color: #000;
 }
 #about .info strong {
   display: inline-block;

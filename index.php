@@ -183,8 +183,8 @@
     </div></a>
   </section>
   <section id="top_inq">
-    <div class="wrap bg_gr">
-      <h2><strong><img src="<?php the_field('index_image2'); ?>" alt="お問い合わせ"></strong></h2>
+    <div class="wrap bg_gr" style="background-image: url('<?php the_field('index_image2'); ?>');">
+      <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_inquiry.png' ); ?>" alt="お問い合わせ"></strong></h2>
         <div class="btnarea">
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn">お問い合わせフォームはこちら</a></div>
     </div>
