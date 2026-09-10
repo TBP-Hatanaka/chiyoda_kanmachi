@@ -1,15 +1,17 @@
 <?php get_header( null, array( 'current_page' => 'home' ) ); ?>
 <article class="main">
   <section id="mvarea">
-      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv.jpg' ); ?>" alt="千代田写真" class="pc"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv_sp.jpg' ); ?>" alt="千代田写真" class="sp">
+      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv.jpg' ); ?>" alt="千代田写真" class="pc">
+      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv_sp.jpg' ); ?>" alt="千代田写真" class="sp">
       <p>写真協力：千代田区広報広聴課</p>
   </section>
   <section id="news">
     <div class="wrap">
-      <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News"></strong></h2>
-
-<!-お知らせ追加位置-->
-　　　　<!--/faqここまで-->
+      <h2>
+        <strong>
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+        </strong>
+      </h2>
           <dl class="faq">
             <dt>
                <span class="date">2026/03/31</span>

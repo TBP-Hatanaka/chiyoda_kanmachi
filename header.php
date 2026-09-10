@@ -39,7 +39,7 @@ $og_type = 'about' === $current_page ? 'article' : 'website';
 <link rel="apple-touch-icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/apple-touch-icon.png' ); ?>">
 <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/apple-touch-icon-precomposed.png' ); ?>"/>
 <link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/base.css' ); ?>" rel="stylesheet"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/' . $stylesheet ); ?>" rel="stylesheet"/>
+<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/top.css' ); ?>" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RYS991XQ"></script>
@@ -60,9 +60,9 @@ gtag('config', 'G-D3RYS991XQ');
 
     <nav id="menu_pc" class="pc">
       <ul class="menulist">
-        <li><a href="<?php echo esc_url( home_url( '/index.php#event' ) ); ?>">イベント</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/about.php' ) ); ?>">千代田観光まちづくり実行委員会とは</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/inquiry/contact.php' ) ); ?>">お問い合わせ</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/#event' ) ); ?>">イベント</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">千代田観光まちづくり実行委員会とは</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li>
         <li><a href="https://note.com/kanmachi" rel="nofollow" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/logo_note_n.png' ); ?>" alt="note"></a></li>
         <li><a href="http://www.facebook.com/share.php?u=https://www.chiyoda-event.com/chiyodakankou/" rel="nofollow" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/ic_fb.png' ); ?>" alt="フェイスブック"></a></li>
         <li><a href="https://twitter.com/share?url=https://www.chiyoda-event.com/chiyodakankou/&hashtags=千代田観光まちづくり実行委員会,千代田区,観光&text=千代田観光まちづくり実行委員会は、千代田区の商工業者と街の活性化に向けて取り組んでおります。" rel="nofollow" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/ic_tw.png' ); ?>" alt="ツイッター"></a></li>
@@ -77,10 +77,10 @@ gtag('config', 'G-D3RYS991XQ');
     </a>
     <nav id="menu_sp" class="sp">
       <ul class="menulist">
-        <li><a href="<?php echo esc_url( home_url( '/index.php#event' ) ); ?>">イベント</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/about.php' ) ); ?>">千代田観光まちづくり実行委員会とは</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/inquiry/contact.php' ) ); ?>">お問い合わせ</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/privacy.php' ) ); ?>">プライバシーポリシー</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/#event' ) ); ?>">イベント</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">千代田観光まちづくり実行委員会とは</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">プライバシーポリシー</a></li>
       </ul>
       <ul class="menulist2">
         <li><a href="https://note.com/kanmachi" rel="nofollow" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/logo_note_n.png' ); ?>" alt="note"></a></li>
