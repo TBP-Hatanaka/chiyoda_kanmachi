@@ -12,12 +12,6 @@ $page_title = isset( $args['page_title'] ) ? $args['page_title'] : '';
 $default_title = '千代田観光まちづくり実行委員会 千代田区の観光、商業振興、地域活性化に向けた活動をしています';
 $document_title = $page_title ? '千代田観光まちづくり実行委員会｜' . $page_title : $default_title;
 $body_id = 'contact' === $current_page ? 'inquiry' : $current_page;
-$page_css = array(
-    'home'    => 'top.css',
-    'about'   => 'about.css',
-    'contact' => 'inquiry.css',
-);
-$stylesheet = isset( $page_css[ $current_page ] ) ? $page_css[ $current_page ] : 'top.css';
 $og_type = 'about' === $current_page ? 'article' : 'website';
 ?>
 <!DOCTYPE html>
@@ -38,8 +32,7 @@ $og_type = 'about' === $current_page ? 'article' : 'website';
 <link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/favicon.ico' ); ?>">
 <link rel="apple-touch-icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/apple-touch-icon.png' ); ?>">
 <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/apple-touch-icon-precomposed.png' ); ?>"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/base.css' ); ?>" rel="stylesheet"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/top.css' ); ?>" rel="stylesheet"/>
+<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/style.css' ); ?>" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RYS991XQ"></script>
