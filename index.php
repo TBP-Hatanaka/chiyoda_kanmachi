@@ -1,8 +1,8 @@
 <?php get_header( null, array( 'current_page' => 'home' ) ); ?>
 <article class="main">
   <section id="mvarea">
-      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv.jpg' ); ?>" alt="千代田写真" class="pc">
-      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv_sp.jpg' ); ?>" alt="千代田写真" class="sp">
+      <img src="<?php the_field('index_image'); ?>" alt="<?php the_field('index_image_alt'); ?>" class="pc">
+      <img src="<?php the_field('index_image_sp'); ?>" alt="<?php the_field('index_image_alt'); ?>" class="sp">
       <p>写真協力：千代田区広報広聴課</p>
   </section>
   <section id="news">
