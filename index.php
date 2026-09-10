@@ -9,7 +9,7 @@
   <section id="news">
     <div class="wrap">
       <h2>
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News"></strong>
       </h2>
       <?php if( have_rows('index_news') ): ?>
         <?php while ( have_rows('index_news') ) : the_row(); ?>
@@ -160,17 +160,24 @@
   <section id="event" class="bg_g">
     <div class="wrap">
       <h2>
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧">
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧"></strong>
       </h2>
       <ul class="flex">
         <?php if( have_rows('index_event') ): ?>
           <?php while ( have_rows('index_event') ) : the_row(); ?>
+            <?php $event_url = get_sub_field( 'index_event4' ); ?>
             <li>
-              <a href="<?php the_sub_field('index_event4'); ?>" target="_blank">
+              <?php if ( $event_url ) : ?>
+                <a href="<?php echo esc_url( $event_url ); ?>" target="_blank">
+                  <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
+                  <h4><?php the_sub_field('index_event1'); ?></h4>
+                  <p><?php the_sub_field('index_event2'); ?></p>
+                </a>
+              <?php else : ?>
                 <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
                 <h4><?php the_sub_field('index_event1'); ?></h4>
                 <p><?php the_sub_field('index_event2'); ?></p>
-              </a>
+              <?php endif; ?>
             </li>
           <?php endwhile; ?>
       <?php endif; ?>
