@@ -13,11 +13,12 @@
       </h2>
       <?php if( have_rows('index_news') ): ?>
         <?php while ( have_rows('index_news') ) : the_row(); ?>
-          <div class="news">
-            <a href="<?php the_sub_field('index_news5'); ?>" target="_blank">
-              <span class="date"><?php the_sub_field('index_news2'); ?></span>
-              <p><?php the_sub_field('index_news3'); ?></p>
-              <?php
+          <dl class="news">
+            <dt>
+              <a href="<?php the_sub_field('index_news5'); ?>" target="_blank">
+                <span class="date"><?php the_sub_field('index_news2'); ?></span>
+                <p><?php the_sub_field('index_news3'); ?></p>
+                <?php
               $news_type = get_sub_field( 'index_news1' );
               $news_icons = array(
                   'standard'     => '/img/common/ic_arrowt_p.png',
@@ -30,9 +31,22 @@
                   $news_icon_url = get_stylesheet_directory_uri() . $news_icons[ $news_type ];
                   echo '<img class="news_icon" src="' . esc_url( $news_icon_url ) . '" alt="">';
               }
-              ?>
-            </a>
-          </div>
+                ?>
+              </a>
+            </dt>
+            <?php if ( 'standard' === $news_type ) : ?>
+              <dd>
+                <b>千代田さくら祭り2026公式ガイドMAP　掲載広告（新規）募集のご案内</b><br>
+                問合せ先：千代田観光まちづくり実行委員会<br>
+                Tel　03-5244-5135　Fax　03-5244-5136　Email　kanmachi2@chiyoda-shokoren.com<br><br>
+
+                <b>千代田さくら祭り2026公式ガイドMAP</b><br>
+                媒体の概要については、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026.pdf' ); ?>" target="_blank">千代田さくら祭り2026公式ガイドMAP　掲載広告募集のご案内「PDF版」</a>をご覧ください。<br>
+                広告掲載料金、掲載サイズについては、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026_guide.pdf' ); ?>" target="_blank">こちらのPDF</a>をご覧ください。<br>
+                広告掲載に関するお問い合わせ、お申込みは、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026_moushikomi.pdf' ); ?>" target="_blank">広告掲載に関する連絡及びお申込み用紙「PDF版」</a>をご利用ください。<br>
+              </dd>
+            <?php endif; ?>
+          </dl>
           <hr>
         <?php endwhile; ?>
     <?php endif; ?>
@@ -83,17 +97,6 @@
                <span class="date">2025/10/20</span>
               <p>千代田さくら祭り2026公式ガイドMAP　掲載広告（新規）募集のご案内</p>
             </dt>
-            <dd>
-		<b>千代田さくら祭り2026公式ガイドMAP　掲載広告（新規）募集のご案内</b><br>
-                問合せ先：千代田観光まちづくり実行委員会<br />
-                Tel　03-5244-5135　Fax　03-5244-5136　Email　kanmachi2@chiyoda-shokoren.com<br><br>
-
-		<b>千代田さくら祭り2026公式ガイドMAP</b><br>
-		媒体の概要については、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026.pdf' ); ?>" target="_blank">千代田さくら祭り2026公式ガイドMAP　掲載広告募集のご案内「PDF版」</a>をご覧ください。<br>
-	        広告掲載料金、掲載サイズについては、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026_guide.pdf' ); ?>" target="_blank">こちらのPDF</a>をご覧ください。<br>
-		広告掲載に関するお問い合わせ、お申込みは、<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2026_moushikomi.pdf' ); ?>" target="_blank">広告掲載に関する連絡及びお申込み用紙「PDF版」</a>をご利用ください。<br>
-		
-            </dd>
           </dl>
 
 　　　 <div class="faq2">
