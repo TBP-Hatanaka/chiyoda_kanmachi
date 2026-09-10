@@ -1,45 +1,10 @@
 <?php
-/**
- * Page template for the "about" slug.
- */
-
-$page_title = '千代田観光まちづくり実行委員会とは';
-$current_page = 'about';
-get_header();
+$header_args = array(
+    'page_title'   => '千代田観光まちづくり実行委員会とは',
+    'current_page' => 'about',
+);
+get_header( null, $header_args );
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, user-scalable=yes"/>
-<title>千代田観光まちづくり実行委員会｜千代田観光まちづくり実行委員会とは</title>
-<meta name="keywords" content="千代田観光まちづくり実行委員会,千代田区,観光,千代田のさくらまつり,無料シャトルバス,さくら祭り号"/>
-<meta name="description" content="千代田観光まちづくり実行委員会は、千代田区の商工業者と街の活性化に向けて取り組んでおります。"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="og:title" content="千代田観光まちづくり実行委員会"/>
-<meta property="og:type" content="article"/>
-<meta property="og:description" content="千代田観光まちづくり実行委員会は、千代田区の商工業者と街の活性化に向けて取り組んでおります。" />
-<meta property="og:url" content="https://www.kanmachi.com/"/>
-<meta property="og:image" content="https://www.kanmachi.com/img/common/logo.png"/>
-<link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/favicon.ico' ); ?>">
-<link rel="apple-touch-icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/apple-touch-icon.png' ); ?>">
-<link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/apple-touch-icon-precomposed.png' ); ?>"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/base.css' ); ?>" rel="stylesheet"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/about.css' ); ?>" rel="stylesheet"/>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RYS991XQ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date()); 
-gtag('config', 'G-D3RYS991XQ');
-</script>
-</head>
-
-<body id="about">
-<?php include "inc/header.php"; ?>
 <article class="main">
   <section id="mvarea">
       <img src="./img/about/mv.jpg" alt="千代田観光スポット写真">
@@ -93,9 +58,19 @@ gtag('config', 'G-D3RYS991XQ');
         </div>-->
     </div>
   </section>
-
 </article>
-<?php include "inc/footer.php"; ?>
+
+<footer class="bg_g">
+  <div class="wrap">
+    <div class="f-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/logo_c.png' ); ?>" alt="千代田観光まちづくり実行委員会"></a></div>
+    <div class="f-navi"><a href="<?php echo esc_url( home_url( '/index.php#event' ) ); ?>">イベント</a><a href="<?php echo esc_url( home_url( '/about.php' ) ); ?>">千代田観光まちづくり実行委員会とは</a><a href="<?php echo esc_url( home_url( '/inquiry/contact.php' ) ); ?>">お問い合わせ</a><a href="<?php echo esc_url( home_url( '/privacy.php' ) ); ?>">プライバシーポリシー</a> </div>
+  </div>
+  <p class="copy">&#169; 千代田観光まちづくり実行委員会</p>
+</footer>
+
+<!--画面上部へ-->
+<p id="pagetop"><a href="#"></a></p>
+<!--//画面上部へ--> 
 <script src="<?php echo esc_url( get_stylesheet_directory_uri() . '/js/jquery-1.7.1.min.js' ); ?>"></script> 
 <script src="<?php echo esc_url( get_stylesheet_directory_uri() . '/js/common.js' ); ?>"></script>
 </body>
