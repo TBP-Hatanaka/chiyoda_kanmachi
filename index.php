@@ -8,7 +8,9 @@
   
   <section id="news">
     <div class="wrap">
-      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+      <h2>
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+      </h2>
       <?php if( have_rows('index_news') ): ?>
         <?php while ( have_rows('index_news') ) : the_row(); ?>
           <div class="faq2">
@@ -141,10 +143,11 @@
     </div>
   </section>
 
-
-  <section id="news">
+  <section id="event" class="bg_g">
     <div class="wrap">
-    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧">
+      <h2>
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧">
+      </h2>
       <?php if( have_rows('index_event') ): ?>
         <?php while ( have_rows('index_event') ) : the_row(); ?>
           <ul class="flex">
