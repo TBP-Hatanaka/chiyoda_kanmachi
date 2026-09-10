@@ -17,6 +17,20 @@
             <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/timetravelers.pdf' ); ?>" target="_blank">
               <span class="date"><?php the_sub_field('index_news2'); ?></span>
               <p><?php the_sub_field('index_news3'); ?></p>
+              <?php
+              $news_type = get_sub_field( 'index_news1' );
+              $news_fields = array(
+                  'standard'     => 'standard',
+                  'internallink' => 'internallink',
+                  'weblink'      => 'weblink',
+                  'pdf'          => 'pdf',
+              );
+
+              if ( isset( $news_fields[ $news_type ] ) ) {
+                  $news_text = get_sub_field( $news_fields[ $news_type ] );
+                  echo '<p>' . esc_html( $news_text ) . '</p>';
+              }
+              ?>
             </a>
           </div>
           <hr>
@@ -163,71 +177,6 @@
     </ul>
   </section>
 
-
-  <section id="event" class="bg_g">
-    <div class="wrap">
-      <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧"></strong></h2>
-        <!--↓イベント画像はpngでもjpgでもご自由に-->
-        <ul class="flex">
-        <li><a href="https://kanmachi.com/guidemap2025/index.html#page=1" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/sakuramap2025.png' ); ?>" alt="千代田さくら2025ガイドMAP">
-            <h4>千代田さくら祭り2025公式ガイドMAP</h4>
-                <p>2025年3月～4月</p></a>
-        </li>
-	<li><a href="https://kanmachi.com/yorimichi2025/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/yorimichi2025.png' ); ?>" alt="ちよだよりみちさんぽ2025">
-            		<h4>ちよだよりみちさんぽ2025</h4>
-    		        <p></p></li>
-		<li><a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/timetravelers.pdf' ); ?>" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/obento2024.png' ); ?>" alt="第5回千代田お弁当大賞2024">
-            		<h4>（第５回千代田お弁当大賞）<br>「デジタルスタンプラリー、千代田タイムトラベラーズ・ツアー2024-2025グルメ編」</h4>
-		<p>2024年11月6日～2025年2月5日</p></a>
-    		        <p></p></li>
-
-	    <li><a href="https://www.kanmachi.com/guidemap/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/sakuramap2024.jpg' ); ?>" alt="千代田さくら2024ガイドMAP">
-            <h4>千代田さくら祭り2024公式ガイドMAP</h4>
-                <p>2024年3月～4月</p></a></li>
-
- 		<li><a href="https://kanmachi.com/yorimichi2024/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/yorimichi2024.png' ); ?>" alt="ちよだよりみちさんぽ2024">
-            		<h4>ちよだよりみちさんぽ2024</h4>
-		<!-- <p>2021年10月15日?12月20日</p></a>-->
-    		        <p></p></li>
-
-
-            <li><a href="https://www.kanmachi.com/obento2023/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/obento2023.png' ); ?>" alt="千代田お弁当大賞2023">
-            <h4>第4回千代田お弁当大賞</h4>
-                <p>2023年10月25日～11月27日</p></a></li>
-
-            <li><a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/ChiyodaSakuraFes2023.pdf' ); ?>" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/sakuramap2023.jpg' ); ?>" alt="千代田さくら2023ガイドMAP">
-            <h4>千代田さくら祭り2023公式ガイドMAP</h4>
-                <p>2023年3月～4月</p></a></li>
-
- 		<li><a href="https://kanmachi.com/yorimichi2023/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/yorimichi2023.png' ); ?>" alt="ちよだよりみちさんぽ2023">
-            		<h4>ちよだよりみちさんぽ2023</h4>
-		<!-- <p>2021年10月15日?12月20日</p></a>-->
-    		        <p></p></li>
-
-            <li><a href="https://www.kanmachi.com/obento2022/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/obento2022.png' ); ?>" alt="千代田お弁当大賞2022">
-            <h4>第3回千代田お弁当大賞</h4>
-                <p>2022年10月28日$301C11月23日</p></a></li>
-
-            <li><a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2022map.pdf' ); ?>" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/sakuramap2022.jpg' ); ?>" alt="千代田さくら2022ガイドMAP">
-            <h4>千代田さくら2022ガイドMAP</h4>
-                <p>2022年3月～4月</p></a></li>
-            <li><a href="https://kanmachi.com/yorimichi/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/yorimichi.jpg' ); ?>" alt="ちよだよりみちさんぽ">
-            		<h4>ちよだよりみちさんぽ</h4>
-		<!-- <p>2021年10月15日?12月20日</p></a>-->
-    		        <p></p></li>
-            <li><a href="https://www.kanmachi.com/obento/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/obento2021_1.jpg' ); ?>" alt="第2回千代田お弁当大賞">
-            <h4>第2回千代田お弁当大賞</h4>
-		 <p>2021年10月15日～12月20日</p></a>
-            <p></p></li>
-            <li><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/bnn_event001.png' ); ?>" alt="お弁当大賞">
-            <h4>千代田お弁当大賞</h4>
-            <p>2020年10月9日～12月10日</p></a></li>
-            <li><a href="http://www.chiyoda-event.com/kanmachi/" target="_blank"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/event/bnn_event002.png' ); ?>" alt="千代田区のさくら祭り">
-            <h4>千代田区のさくら祭り2020</h4>
-                <p>2020年3月～4月</p></a></li>
-        </ul>
-    </div>
-  </section>
   <section id="top_about" class="bg_p"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">
     <div class="wrap">
      <p><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_pc.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="pc"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_sp.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="sp"></p>

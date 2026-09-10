@@ -377,7 +377,7 @@ a.btn{
     -moz-border-radius: .42em;
     -webkit-border-radius: .42em;
     margin:auto;
-    background-image: url("../img/common/ic_arrow_p.png");
+    background-image: url("./img/common/ic_arrow_p.png");
     background-size: auto .9em;
     background-repeat: no-repeat;
     background-position: right 2em center;
@@ -385,7 +385,7 @@ a.btn{
 a.btn:hover{
     color:#fff;
     background: rgba(235,109,154,.6);
-    background-image: url("../img/common/ic_arrow_w.png");
+    background-image: url("./img/common/ic_arrow_w.png");
     background-size: auto .9em;
     background-repeat: no-repeat;
     background-position: right 1.6em center;
@@ -430,14 +430,14 @@ ol.dot li:before {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, .9);
   border: 1px solid #eb6d9a;
-  background-image: url("../img/common/ic_arrowt_p.png");
+  background-image: url("./img/common/ic_arrowt_p.png");
   background-size: 50%;
     background-repeat: no-repeat;
   background-position: center center;
 }
 #pagetop a:hover {
   background-color: rgba(235, 109, 154, 1);
-  background-image: url("../img/common/ic_arrowt_w.png");
+  background-image: url("./img/common/ic_arrowt_w.png");
     background-repeat: no-repeat;
   border: 1px solid #fff;
 }
@@ -685,7 +685,7 @@ base
     margin: auto;
     width: 1em;
     height: 1em;
-    background-image: url("../img/common/ic_arrow_w.png");
+    background-image: url("./img/common/ic_arrow_w.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
@@ -786,7 +786,7 @@ a.btn{
   }
   #pagetop a:active {
   background-color: rgba(235, 109, 154, 1);
-  background-image: url("../img/common/ic_arrowt_w.png");
+  background-image: url("./img/common/ic_arrowt_w.png");
   border: 1px solid #fff;
   }
 /*メインビジュアル*/
@@ -861,7 +861,7 @@ a.btn{
 .faq dt:after {
   width: 1.3em;
   height: 1.3em;
-  background-image: url("../img/common/ic_arrowt_p.png");
+  background-image: url("./img/common/ic_arrowt_p.png");
    transform: rotate( 180deg );
 }
 .faq dt.active:after {
@@ -883,7 +883,7 @@ a.btn{
   width: 1em;
   height: 1em;
     background-color:#222;
-  background-image: url("../img/top/ic_qanda_a.png");
+  background-image: url("./img/top/ic_qanda_a.png");
 }
 .faq dd a[href^="http"]:after {
       content: " ";
@@ -891,7 +891,7 @@ a.btn{
   width: .8em;
   height: .8em;
     margin-left: .2em;
-  background-image: url("../img/common/ic_hyper.png");
+  background-image: url("./img/common/ic_hyper.png");
     background-size: contain;
 }
 /*faq2*/
@@ -902,14 +902,14 @@ a.btn{
 .faq2 a:after {
   width: 1em;
   height: 1em;
-  background-image: url("../img/common/ic_arrow_p.png");
+  background-image: url("./img/common/ic_arrow_p.png");
 }
 .faq2 a[href^="http"]:after {
-  background-image: url("../img/common/ic_hyper.png");
+  background-image: url("./img/common/ic_hyper.png");
 }
 .faq2 a[href$=".pdf"]:after {
   height: 1.3em;
-  background-image: url("../img/common/ic_pdf.png");
+  background-image: url("./img/common/ic_pdf.png");
 }
 /*線*/
 #news hr{
@@ -982,7 +982,7 @@ a.btn{
 /*千代田〜委員会とは*/
 #top_about .wrap {
   display: block;
-  background-image: url("../img/common/ic_arrow_w.png");
+  background-image: url("./img/common/ic_arrow_w.png");
   background-position: right .5rem center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
@@ -1045,7 +1045,7 @@ a.btn{
 }
 /*お問い合わせ*/
 .main #top_inq .wrap {
-  background-image: url("../img/top/bg_top_inquiry.jpg");
+  background-image: url("./img/top/bg_top_inquiry.jpg");
   background-position: center center;
   background-size: cover;
 }
