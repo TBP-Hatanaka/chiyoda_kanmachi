@@ -5,6 +5,7 @@ Theme Name: Cocoon Child
 Template: cocoon-master
 Version: 1.0.0
 */
+
 /*==========================
 reset
 ==========================*/
@@ -1357,4 +1358,4 @@ mediaクエリ【スマホ】
   }
   #about  .info ul li.bdr_d1{
       margin:-1em 0 0 0;
-} 
+}

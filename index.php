@@ -19,16 +19,16 @@
               <p><?php the_sub_field('index_news3'); ?></p>
               <?php
               $news_type = get_sub_field( 'index_news1' );
-              $news_fields = array(
-                  'standard'     => 'standard',
-                  'internallink' => 'internallink',
-                  'weblink'      => 'weblink',
-                  'pdf'          => 'pdf',
+              $news_icons = array(
+                  'standard'     => '/img/common/ic_arrowt_p.png',
+                  'internallink' => '/img/common/ic_arrow_p.png',
+                  'weblink'      => '/img/common/ic_hyper.png',
+                  'pdf'          => '/img/common/ic_pdf.png',
               );
 
-              if ( isset( $news_fields[ $news_type ] ) ) {
-                  $news_text = get_sub_field( $news_fields[ $news_type ] );
-                  echo '<p>' . esc_html( $news_text ) . '</p>';
+              if ( isset( $news_icons[ $news_type ] ) ) {
+                  $news_icon_url = get_stylesheet_directory_uri() . $news_icons[ $news_type ];
+                  echo '<img src="' . esc_url( $news_icon_url ) . '" alt="">';
               }
               ?>
             </a>
