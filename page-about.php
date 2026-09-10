@@ -1,3 +1,12 @@
+<?php
+/**
+ * Page template for the "about" slug.
+ */
+
+$page_title = '千代田観光まちづくり実行委員会とは';
+$current_page = 'about';
+get_header();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">

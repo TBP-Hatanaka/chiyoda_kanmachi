@@ -34,6 +34,13 @@ if ( !isset( $_SESSION[ 'ticket' ] ) ) {
 
 //トークンを変数に代入
 $ticket = $_SESSION[ 'ticket' ];
+/**
+ * Page template for the "about" slug.
+ */
+
+$page_title = 'お問い合わせ';
+$current_page = 'contact';
+get_header();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
