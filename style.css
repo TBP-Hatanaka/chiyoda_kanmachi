@@ -129,6 +129,37 @@ body {
 .news_link:hover {
   color: #eb6d9a;
 }
+.news-table {
+  width: 100%;
+  table-layout: fixed;
+}
+.news-table td {
+  vertical-align: middle;
+}
+.news-table__summary td {
+  border-top: 1px solid #ccc;
+  padding: 1em .5em;
+}
+.news-table__date {
+  width: 8em;
+  white-space: nowrap;
+  text-align: left;
+}
+.news-table__title {
+  text-align: left;
+}
+.news-table__icon {
+  width: 3em;
+  text-align: right;
+}
+.news-table .news_link {
+  display: block;
+}
+.news-table__detail td {
+  border-top: 1px dashed #ccc;
+  padding: 1em;
+  text-align: left;
+}
 a, a:link {
   color: #eb6d9a;
   text-decoration: none;

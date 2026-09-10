@@ -11,38 +11,52 @@
       <h2>
         <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News"></strong>
       </h2>
-      <?php if( have_rows('index_news') ): ?>
-        <?php while ( have_rows('index_news') ) : the_row(); ?>
-          <dl class="news">
-            <dt>
-              <a class="news_link" href="<?php the_sub_field('index_news5'); ?>" target="_blank">
-                <span class="date"><?php the_sub_field('index_news2'); ?></span>
-                <p><?php the_sub_field('index_news3'); ?></p>
-                <?php
+      <?php if ( have_rows( 'index_news' ) ) : ?>
+        <?php
+        $news_icons = array(
+            'standard'     => '/img/common/ic_arrowt_p.png',
+            'internallink' => '/img/common/ic_arrow_p.png',
+            'weblink'      => '/img/common/ic_hyper.png',
+            'pdf'          => '/img/common/ic_pdf.png',
+        );
+        ?>
+        <table class="news-table">
+          <tbody>
+            <?php while ( have_rows( 'index_news' ) ) : the_row(); ?>
+              <?php
               $news_type = get_sub_field( 'index_news1' );
-              $news_icons = array(
-                  'standard'     => '/img/common/ic_arrowt_p.png',
-                  'internallink' => '/img/common/ic_arrow_p.png',
-                  'weblink'      => '/img/common/ic_hyper.png',
-                  'pdf'          => '/img/common/ic_pdf.png',
-              );
-
-              if ( isset( $news_icons[ $news_type ] ) ) {
-                  $news_icon_url = get_stylesheet_directory_uri() . $news_icons[ $news_type ];
-                  echo '<img class="news_icon" src="' . esc_url( $news_icon_url ) . '" alt="">';
-              }
-                ?>
-              </a>
-            </dt>
-            <?php if ( 'standard' === $news_type ) : ?>
-              <dd>
-                <?php the_sub_field('index_news4'); ?>
-              </dd>
-            <?php endif; ?>
-          </dl>
-          <hr>
-        <?php endwhile; ?>
-    <?php endif; ?>
+              $news_date = get_sub_field( 'index_news2' );
+              $news_title = get_sub_field( 'index_news3' );
+              $news_detail = get_sub_field( 'index_news4' );
+              $news_url = get_sub_field( 'index_news5' );
+              $news_icon_url = isset( $news_icons[ $news_type ] )
+                  ? get_stylesheet_directory_uri() . $news_icons[ $news_type ]
+                  : '';
+              ?>
+              <tr class="news-table__summary">
+                <td class="news-table__date">
+                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
+                </td>
+                <td class="news-table__title">
+                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_title ); ?></a>
+                </td>
+                <td class="news-table__icon">
+                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
+                    <?php if ( $news_icon_url ) : ?>
+                      <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
+                    <?php endif; ?>
+                  </a>
+                </td>
+              </tr>
+              <?php if ( 'standard' === $news_type ) : ?>
+                <tr class="news-table__detail">
+                  <td colspan="3"><?php echo wp_kses_post( $news_detail ); ?></td>
+                </tr>
+              <?php endif; ?>
+            <?php endwhile; ?>
+          </tbody>
+        </table>
+      <?php endif; ?>
   </section>
 
   <section id="news">
