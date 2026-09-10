@@ -1,0 +1,1144 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Cocoon Child
+Template: cocoon-master
+Version: 1.0.0
+*/
+/*==========================
+reset
+==========================*/
+/**
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html {
+  color: #000;
+  background: #FFF;
+}
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF.
+*/
+ * {
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+  vertical-align: bottom;
+}
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+strong, th {
+  font-style: normal;
+}
+ol, ul {
+  list-style: none;
+}
+caption, th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+/*to enable resizing for IE*/
+input, textarea, select {
+  *font-size: 100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+  color: #000;
+}
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+input[type=text] {
+  line-height: normal;
+}
+input::-webkit-input-placeholder {
+  padding-top: 0.3em;
+}
+/*==========================
+print
+==========================*/
+@media print {
+  body {
+    zoom: 90%;
+  }
+}
+/*==========================
+base
+==========================*/
+body {
+  color: #222;
+  font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+  line-height: 1.5;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+a, a:link {
+  color: #eb6d9a;
+  text-decoration: none;
+  transition: all .3s;
+}
+a:hover {
+  text-decoration: none;
+}
+a:hover img {
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.tx_a_l {
+  text-align: left;
+}
+.tx_a_r {
+  text-align: right;
+}
+.tx_a_c {
+  text-align: center;
+}
+/*bg*/
+.bg_g{
+  background: #f9f9f9;
+}
+.bg_p{
+  background: #eb6d9a;
+}
+.bg_gr{
+  background: #332200;
+}
+/*線*/
+.bdr_b{
+    border-bottom:1px solid #222;
+}
+/*クリア、クリアフィックス
+--------------------------------*/
+.clear {
+  clear: both;
+}
+.clearfix:before, .clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+.clearfix {
+  display: block;
+}
+/*==========================
+header
+==========================*/
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  clear: both;
+  background: rgba(255, 255, 255, .9);
+  position: fixed;
+  height: 70px;
+    z-index: 9980;
+}
+header .wrap {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1200px;
+}
+header .logo {
+  display: inline-block;
+  margin-top: 12px;
+}
+header .logo img {
+  width: auto;
+  height: 44px;
+}
+.menulist {
+  display: inline-block;
+  overflow: hidden;
+  margin: auto;
+}
+.menulist li {
+  display: inline-block;
+}
+.menulist li a {
+  color: #222;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+/* 現在ページ */
+.menulist li a.here {
+  pointer-events: none;
+}
+/*==========================
+Footer
+==========================*/
+footer {
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  overflow: hidden;
+}
+footer .wrap {
+  padding: 5em 0;
+  margin: auto;
+}
+footer .f-logo img {
+  width: 180px;
+  height: auto;
+}
+footer .f-navi {
+  margin-top: 4em;
+}
+footer .f-navi a {
+  display: inline-block;
+  color: #222;
+  margin: 0 1.5em;
+  padding: 0 0 .6em 0;
+  border-bottom: 1px solid #eb6d9a
+}
+footer .f-navi a:hover {
+  color: #eb6d9a;
+  margin: 0 .8em;
+  padding: 0 .7em .6em .7em;
+}
+footer p.copy {
+  margin: 0 auto;
+  background: #fff;
+  padding: 1rem;
+}
+/*==========================
+Common
+==========================*/
+.main {
+  margin-top: 70px;
+  width: 100%;
+}
+/*wrap*/
+.wrap {
+  width: 1200px;
+  clear: both;
+  padding: 0;
+  margin: auto;
+}
+.main .wrap {
+  overflow: hidden;
+    text-align: center;
+}
+section {
+  clear: both;
+}
+#mvarea {
+  overflow: hidden;
+}
+#mvarea img {
+  width: 100%;
+}
+/*--------------------------- 
+flex
+---------------------------*/
+.flex {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch; /* Safari etc. */
+  -ms-align-items: stretch;
+  align-items: stretch;
+  margin: auto;
+}
+
+/*--------------------------- 
+コンテンツタイトル
+---------------------------*/
+.main h2 {
+    position: relative;
+  font-size:36px;
+  text-align: center;
+  margin:0 auto 2rem auto;
+    padding:0 .2em .7em .2em ;
+    display: inline-block;
+    clear:both;
+}
+.main h2 span{
+  font-size:30px;
+}
+.main h2:before,.main h2 strong:before,.main h2 strong:after{
+     content: '';
+    display: block;
+    position: absolute;
+    margin: auto;
+}
+.main h2:before{
+     width: .22em;
+    height: .22em;
+    border: 1px solid #222;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.main h2 img {
+    width:auto;
+    height:1em;
+}
+.main h2 strong:before,.main h2 strong:after{
+    width:calc(50% - .12em);
+    height: 1px;
+    background: #222;
+    bottom: .12em;
+}
+.main h2 strong:before{
+    left:0;
+}
+.main h2 strong:after{
+    right:0;
+}
+.main .bg_gr h2:before{
+    border: 1px solid #fff;
+}
+.main .bg_gr h2 strong:before,.main .bg_gr h2 strong:after{
+    background: #fff;
+}
+
+/*--------------------------- 
+ボタン
+---------------------------*/
+a.btn{
+    display: inline-block;
+    background-color: #fff;
+    font-weight:700;
+    padding:1em 3.2em 1em 2em;
+    border-radius: .42em;
+    -moz-border-radius: .42em;
+    -webkit-border-radius: .42em;
+    margin:auto;
+    background-image: url("../img/common/ic_arrow_p.png");
+    background-size: auto .9em;
+    background-repeat: no-repeat;
+    background-position: right 2em center;
+}
+a.btn:hover{
+    color:#fff;
+    background: rgba(235,109,154,.6);
+    background-image: url("../img/common/ic_arrow_w.png");
+    background-size: auto .9em;
+    background-repeat: no-repeat;
+    background-position: right 1.6em center;
+}
+/*--------------------------- 
+リスト
+---------------------------*/
+ol.aster li, ol.dot li {
+  position: relative;
+  line-height: 1.35;
+  padding: 0 0 0 1.2em;
+}
+ol.aster li:not(:last-of-type), ol.dot li:not(:last-of-type) {
+  margin-bottom: .3em;
+}
+ol.aster li:before, ol.dot li:before {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+}
+ol.aster li:before {
+  content: '※';
+}
+ol.dot li:before {
+  content: '・';
+}
+/*--------------------------- 
+画面上部へ戻る
+---------------------------*/
+#pagetop {
+  display: block;
+  position: fixed;
+  bottom: 3em;
+  right: 6%;
+  z-index: 9997;
+}
+#pagetop a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .9);
+  border: 1px solid #eb6d9a;
+  background-image: url("../img/common/ic_arrowt_p.png");
+  background-size: 50%;
+    background-repeat: no-repeat;
+  background-position: center center;
+}
+#pagetop a:hover {
+  background-color: rgba(235, 109, 154, 1);
+  background-image: url("../img/common/ic_arrowt_w.png");
+    background-repeat: no-repeat;
+  border: 1px solid #fff;
+}
+/*メインビジュアル*/
+  #privacy #mvarea,#inquiry #mvarea {
+    height: 20vw;
+  }
+/*+++++++++++++++++++++++++++
+mediaクエリ【PC】
++++++++++++++++++++++++++++*/
+@media (max-width: 1199px) {
+    header .wrap,.wrap {
+    width:100%;
+  }
+}
+@media (min-width: 751px) {
+  /*==================
+Base
+    ==================*/
+body {
+  font-size: 16px;
+}
+  .sp {
+    display: none
+  }
+  .pc {
+    display: block;
+  }
+  /*==================
+    Header
+    ==================*/
+  header .wrap {
+    overflow: hidden;
+  }
+  .menulist {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 0;
+    margin: auto;
+  }
+  .menulist li:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+  .menulist li a {
+    font-size: 15px;
+    position: relative;
+    padding: 0 .2em .5em .2em;
+  }
+  .menulist li a:hover {
+      color:#eb6d9a;
+    }
+  .menulist li:nth-of-type(-n+3) a::before, .menulist li:nth-of-type(-n+3) a::after, .menulist li:nth-of-type(-n+3) a.here::before, .menulist li:nth-of-type(-n+3) a.here::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .menulist li:nth-of-type(-n+3) a::before {
+    width: .32em;
+    height: .32em;
+    background: #fff;
+    border: 1px solid #eb6d9a;
+    z-index: 1;
+    bottom: 0;
+    transition: all .3s;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+  }
+  .menulist li:nth-of-type(-n+3) a:hover::before, .menulist li:nth-of-type(-n+3) a.here::before {
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+  .menulist li:nth-of-type(-n+3) a::after, .menulist li a.here::after {
+    height: 1px;
+    background: #eb6d9a;
+    bottom: .25em;
+    transition: all .3s;
+  }
+  .menulist li:nth-of-type(-n+3) a::after {
+    width: 0;
+  }
+  .menulist li:nth-of-type(-n+3) a:hover::after {
+    width: 100%;
+  }
+  /* 現在ページ */
+  .menulist li:nth-of-type(-n+3) a.here::before {
+    border: 1px solid #333;
+  }
+  .menulist li a.here::after {
+    width: 100%;
+    background: #333;
+  }
+  /*sns*/
+  .menulist li img {
+    width: 24px;
+    height: auto;
+  }
+  /*==================
+    Main
+    ==================*/
+  .main .wrap {
+      padding:4.5rem 0;
+  }
+
+  /*--------------------------- 
+画面上部へ戻る
+---------------------------*/
+  #pagetop a {
+    width: 5rem;
+    height: 5rem;
+  }
+  #pagetop a img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+/*+++++++++++++++++++++++++++
+mediaクエリ【スマホ】
++++++++++++++++++++++++++++*/
+@media (max-width: 750px) {
+  /*==================
+base
+    ==================*/
+  body {
+    font-size: 3vw;
+  }
+  .sp {
+    display: block
+  }
+  .pc {
+    display: none;
+  }
+  /*==================
+    wrap
+    ==================*/
+  .wrap {
+    width: 100%;
+    padding: 0;
+  }
+  .main {
+    margin-top: 12vw;
+  }
+  /*==================
+    Header
+    ==================*/
+  header {
+    height: 12vw;
+  }
+  header .logo {
+    margin: 2vw;
+  }
+  header .logo img {
+    height: 8vw;
+  }
+  header .wrap {
+    width: 100vw;
+    height: auto;
+  }
+  /*メニューボタン*/
+  #ic_menu, #ic_menu span {
+    display: block;
+    position: absolute;
+    transition: all .4s;
+  }
+  #ic_menu {
+    width: 9.2vw;
+    height: 9.2vw;
+    right: 2vw;
+    top: 1vw;
+    margin: auto;
+    padding: 0;
+  }
+  #ic_menu span {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 6vw;
+    height: .4vw;
+    background-color: #222;
+  }
+  #ic_menu span:nth-of-type(1) {
+    top: 2.4vw;
+  }
+  #ic_menu span:nth-of-type(2) {
+    top: 50%;
+    bottom: 50%;
+  }
+  #ic_menu span:nth-of-type(3) {
+    bottom: 2.4vw;
+  }
+  #ic_menu.active span:nth-of-type(1) {
+    transform: translateY(2vw) rotate(-45deg);
+    -webkit-transform: translateY(2vw) rotate(-45deg);
+    -moz-transform: translateY(2vw) rotate(-45deg);
+    -ms-transform: translateY(2vw) rotate(-45deg);
+    -o-transform: translateY(2vw) rotate(-45deg);
+  }
+  #ic_menu.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  #ic_menu.active span:nth-of-type(3) {
+    transform: translateY(-2vw) rotate(45deg);
+    -webkit-transform: translateY(-2vw) rotate(45deg);
+    -moz-transform: translateY(-2vw) rotate(45deg);
+    -ms-transform: translateY(-2vw) rotate(45deg);
+    -o-transform: translateY(-2vw) rotate(45deg);
+  }
+  #menu_sp {
+    position: absolute;
+    top: 12vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background: rgba(255, 255, 255, .9);
+  }
+  .menulist, .menulist2 {
+    position: relative;
+    display: block;
+    background: #eb6d9a;
+    padding: 2vw;
+  }
+  .menulist li {
+    display: block;
+    margin: .3rem;
+  }
+  .menulist li a {
+    color: #fff;
+    font-size: 3.78vw;
+    position: relative;
+    display: block;
+    padding: .8em;
+    border-bottom: 1px solid #fff;
+  }
+  .menulist li a:not(.here)::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 2vw;
+    bottom: 0;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    background-image: url("../img/common/ic_arrow_w.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  .menulist2 {
+    text-align: center;
+    font-size: 0;
+    padding: 2vw 0 6vw 0;
+  }
+  .menulist2 li {
+    display: inline-block;
+    background: #fff;
+    overflow: hidden;
+    padding: 1em 1.5em;
+    margin: 0;
+    font-size: 3.78vw;
+  }
+  .menulist2 li:first-of-type {
+    border-radius: .3em 0 0 .3em / .3em 0 0 .3em;
+    -moz-border-radius: .3em 0 0 .3em / .3em 0 0 .3em;
+    -webkit-border-radius: .3em 0 0 .3em / .3em 0 0 .3em;
+  }
+  .menulist2 li:last-of-type {
+    border-radius: 0 .3em .3em 0 / 0 .3em .3em 0;
+    -moz-border-radius: 0 .3em .3em 0 / 0 .3em .3em 0;
+    -webkit-border-radius: 0 .3em .3em 0 / 0 .3em .3em 0;
+  }
+  .menulist2 li img {
+    width: auto;
+    height: 2.2em;
+  }
+  /* 現在ページ */
+  .menulist li a.here {
+    color: #fff;
+    border: 1px solid #fff;
+    pointer-events: none;
+  }
+  /*==================
+    Main
+    ==================*/
+  .main .wrap {
+      padding:9vw 3vw 9.6vw 3vw;
+  }
+  /*--------------------------- 
+コンテンツタイトル
+---------------------------*/
+.main h2 {
+font-size:4.8vw;
+  margin:0 auto 6.4vw auto;
+}
+.main h2 span{
+  font-size:4vw;
+}
+/*--------------------------- 
+ボタン
+---------------------------*/
+a.btn{
+    border-radius: 2em;
+    -moz-border-radius: 2em;
+    -webkit-border-radius: 2em;
+}
+  /*==================
+    Footer
+    ==================*/
+  footer {
+    font-size: 3.2vw;
+  }
+  footer .wrap {
+    padding: 10vw 3vw 8vw 3vw;
+  }
+  footer .f-logo img {
+    width: 55%;
+  }
+  footer .f-navi {
+    margin-top: 3.2em;
+  }
+  footer .f-navi a {
+    margin: 0 1em 1.2em;
+    padding: 0 0 .6em 0;
+  }
+  footer p.copy {
+    font-size: 2.8vw;
+  }
+  /*---------------------------
+画面上部へ戻る
+---------------------------*/
+  #pagetop {
+    bottom: 2rem;
+    right: .5rem;
+  }
+  #pagetop a {
+    width: 12vw;
+    height: 12vw;
+  }
+  #pagetop a img {
+    width: 7vw;
+    height: 7vw;
+  }
+  #pagetop a:active {
+  background-color: rgba(235, 109, 154, 1);
+  background-image: url("../img/common/ic_arrowt_w.png");
+  border: 1px solid #fff;
+  }
+/*メインビジュアル*/
+  #privacy #mvarea,#inquiry #mvarea {
+    height: 30vw;
+  }
+}
+
+@charset "UTF-8";
+/* **********************************************************
+■　Home
+********************************************************** */
+#home .main {
+  margin-top: 0;
+}
+#home #mvarea {
+  max-height: 500px;
+    position: relative
+}
+#home #mvarea p{
+    position: absolute;
+    bottom:.5em;
+    right:1em;
+    margin:auto;
+    font-size: 8px;
+    color:#fff;
+    font-weight: 300;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.5)
+}
+/*News*/
+#news .wrap {
+  width: 1024px;
+}
+#news a:hover{
+    color:#eb6d9a;
+    text-decoration: underline;
+}
+#news [class^="faq"]{
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    margin:0;
+    line-height: 1.85;
+    font-size: 16px;
+    position: relative;
+}
+.faq dt,.faq dd,.faq2 a{
+    position: relative;
+}
+.faq dt,.faq2 a{
+    padding:1em 2em 1em 1em;
+    border-top:1px solid #ccc;
+}
+.faq dt{
+    cursor: pointer;
+}
+.faq dd:before,.faq dt:after,.faq2 a:after{
+  content: " ";
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: all .3s;
+}
+.faq dt:after,.faq2 a:after {
+  bottom: 0;
+  right:1em;
+}
+.faq dt:after {
+  width: 1.3em;
+  height: 1.3em;
+  background-image: url("../img/common/ic_arrowt_p.png");
+   transform: rotate( 180deg );
+}
+.faq dt.active:after {
+   transform: rotate( 0 );
+}
+[class^="faq"] .date{
+    font-weight: 300;
+}
+/*dd*/
+.faq dd{
+    display: none;
+    font-weight:300;
+    border-top:1px dashed #ccc;
+    padding:1em 0 1em 1.6em ;
+}
+.faq dd:before{
+    top:1.43em;
+    left:0;
+  width: 1em;
+  height: 1em;
+    background-color:#222;
+  background-image: url("../img/top/ic_qanda_a.png");
+}
+.faq dd a[href^="http"]:after {
+      content: " ";
+    display: inline-block;
+  width: .8em;
+  height: .8em;
+    margin-left: .2em;
+  background-image: url("../img/common/ic_hyper.png");
+    background-size: contain;
+}
+/*faq2*/
+.faq2 a{
+    color:#222;
+    display: block;
+}
+.faq2 a:after {
+  width: 1em;
+  height: 1em;
+  background-image: url("../img/common/ic_arrow_p.png");
+}
+.faq2 a[href^="http"]:after {
+  background-image: url("../img/common/ic_hyper.png");
+}
+.faq2 a[href$=".pdf"]:after {
+  height: 1.3em;
+  background-image: url("../img/common/ic_pdf.png");
+}
+/*線*/
+#news hr{
+	clear:both;
+	height:1px;
+	margin:0;
+	padding:0;
+	border:1px;
+	border-top: 1px solid #ccc;
+}
+/*イベント*/
+#event li img {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+#event li h4 {
+  color: #999;
+  display: inline-block;
+  font-size: 1.37rem;
+  font-weight: 500;
+    position: relative;
+  margin: .8em auto .3em;
+  padding: 0 .3em .7em .3em;
+}
+#event li a h4 {
+  transition: all .3s;
+}
+#event li a h4::before, #event li a h4::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#event li a h4::before {
+  width: .32em;
+  height: .32em;
+  background: #f8f8f8;
+  border: 1px solid #222;
+  z-index: 1;
+  bottom: 0;
+  transition: all .3s;
+}
+#event li a:hover h4::before {
+  border: 1px solid #eb6d9a;
+}
+#event li a h4::after {
+  height: 1px;
+  background: #222;
+  bottom: .175em;
+}
+#event li a:hover h4 {
+    width:100%;
+}
+#event li a:hover h4::after {
+  background: #eb6d9a;
+}
+#event li p {
+    font-size:1rem;
+  color: #999;
+}
+/*リンクあり*/
+#event li a img {
+  border: 1px solid #222;
+}
+#event li a h4, #event li a p {
+  color: #222;
+}
+/*千代田〜委員会とは*/
+#top_about .wrap {
+  display: block;
+  background-image: url("../img/common/ic_arrow_w.png");
+  background-position: right .5rem center;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all .3s;
+}
+#top_about:hover .wrap {
+  background-position: right 0 center;
+}
+#top_about img {
+  width: 623px;
+  height: auto;
+}
+#top_about p {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  padding: 0 .2em .7em .2em;
+  margin-bottom: -.7em;
+  font-size: 36px;
+}
+#top_about p::before, #top_about p::after {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  transition: all .3s;
+}
+#top_about p::before {
+  width: .22em;
+  height: .22em;
+  background: #eb6d9a;
+  border: 1px solid #fff;
+  z-index: 1;
+  bottom: 0;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+}
+#top_about:hover p::before {
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+#top_about p::after {
+  bottom: .12em;
+  background: #fff;
+  width: 0;
+  height: 1px;
+}
+#top_about:hover p::after {
+  width: 100%;
+}
+#top_about a:hover img {
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
+}
+/*お問い合わせ*/
+.main #top_inq .wrap {
+  background-image: url("../img/top/bg_top_inquiry.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+#top_inq a.btn {
+  font-size: 24px;
+  padding: 1.2em 3.2em 1.2em 2em;
+  border: 1px solid #fff;
+}
+
+/*+++++++++++++++++++++++++++
+mediaクエリ【PC】
++++++++++++++++++++++++++++*/
+@media (max-width: 1023px) {
+#news .wrap {
+  width: 100%;
+}
+}
+@media (min-width: 751px) {
+[class^="faq"] .date{
+    width:7em;
+    position: absolute;
+}
+[class^="faq"] p{
+    padding-left:7em;
+}
+.faq dd{
+    margin:0 0 0 8em;
+}
+  /*イベント*/
+  #event ul li {
+    width: 31.33333%;
+  }
+  #event ul li:not(:nth-of-type(3n)) {
+    margin-right: 3%;
+  }
+    
+  /*お問い合わせ*/
+  .main #top_inq .wrap {
+    margin: 4.5rem auto;
+    padding: 3.5rem 0;
+  }
+}
+/*+++++++++++++++++++++++++++
+mediaクエリ【スマホ】
++++++++++++++++++++++++++++*/
+@media (max-width: 750px) {
+
+#news [class^="faq"]{
+    font-size: 3.4vw;
+}
+/*News*/
+.faq dt,.faq2 a{
+    padding:1em  2.4em 1em 0;
+}
+#home #mvarea p{
+    font-size:2vw;
+}
+/*イベント*/    
+#event li  {
+    margin-bottom:1.8rem;
+}
+#event li h4 {
+  margin: .6em auto .3em;
+    font-size:4.4vw;
+}
+#event li p {
+    font-size:3.2vw;
+}
+  /*千代田〜委員会とは*/
+  #top_about .wrap {
+    background-position: right 1.5em center;
+    background-size: .7rem auto;
+  }
+#top_about:hover .wrap {
+  background-position: right .75em center;
+}
+  #top_about p {
+    font-size: 4.8vw;
+      text-align: center;
+  }
+  #top_about img {
+    width: 60%;
+      margin: auto;
+  } 
+  #top_about:hover p::after {
+  width: 64%;
+}
+  /*お問い合わせ*/
+  .main #top_inq .wrap {
+    margin: 1rem auto;
+    width: 92%;
+    padding: 3rem .8rem
+  }
+  #top_inq a.btn {
+    font-size: 4vw;
+  }
+}

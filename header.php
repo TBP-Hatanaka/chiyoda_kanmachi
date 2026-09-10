@@ -32,7 +32,7 @@ $og_type = 'about' === $current_page ? 'article' : 'website';
 <link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/favicon.ico' ); ?>">
 <link rel="apple-touch-icon" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/apple-touch-icon.png' ); ?>">
 <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/apple-touch-icon-precomposed.png' ); ?>"/>
-<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/css/style.css' ); ?>" rel="stylesheet"/>
+<link href="<?php echo esc_url( get_stylesheet_directory_uri() . '/style.css' ); ?>" rel="stylesheet"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RYS991XQ"></script>
