@@ -833,17 +833,17 @@ a.btn{
     font-size: 16px;
     position: relative;
 }
-.faq dt,.faq dd,.faq2 a{
+.faq dt,.faq dd,.news_icon a{
     position: relative;
 }
-.faq dt,.faq2 a{
+.faq dt,.news_icon a{
     padding:1em 2em 1em 1em;
     border-top:1px solid #ccc;
 }
 .faq dt{
     cursor: pointer;
 }
-.faq dd:before,.faq dt:after,.faq2 a:after{
+.faq dd:before,.faq dt:after,.news_icon a:after{
   content: " ";
   position: absolute;
   display: block;
@@ -854,7 +854,7 @@ a.btn{
   background-position: center center;
   transition: all .3s;
 }
-.faq dt:after,.faq2 a:after {
+.faq dt:after,.news_icon a:after {
   bottom: 0;
   right:1em;
 }
@@ -894,23 +894,15 @@ a.btn{
   background-image: url("./img/common/ic_hyper.png");
     background-size: contain;
 }
-/*faq2*/
-.faq2 a{
+.news_icon a{
     color:#222;
     display: block;
 }
-.faq2 a:after {
-  width: 1em;
-  height: 1em;
-  background-image: url("./img/common/ic_arrow_p.png");
-}
-.faq2 a[href^="http"]:after {
-  background-image: url("./img/common/ic_hyper.png");
-}
-.faq2 a[href$=".pdf"]:after {
+.news_icon .faqicon {
   height: 1.3em;
   background-image: url("./img/common/ic_pdf.png");
 }
+*/
 /*線*/
 #news hr{
 	clear:both;
@@ -1096,7 +1088,7 @@ mediaクエリ【スマホ】
     font-size: 3.4vw;
 }
 /*News*/
-.faq dt,.faq2 a{
+.faq dt,.news_icon a{
     padding:1em  2.4em 1em 0;
 }
 #home #mvarea p{

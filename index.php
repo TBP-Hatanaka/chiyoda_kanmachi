@@ -13,8 +13,8 @@
       </h2>
       <?php if( have_rows('index_news') ): ?>
         <?php while ( have_rows('index_news') ) : the_row(); ?>
-          <div class="faq2">
-            <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/timetravelers.pdf' ); ?>" target="_blank">
+          <div class="news">
+            <a href="<?php the_sub_field('index_news5'); ?>" target="_blank">
               <span class="date"><?php the_sub_field('index_news2'); ?></span>
               <p><?php the_sub_field('index_news3'); ?></p>
               <?php
@@ -28,7 +28,7 @@
 
               if ( isset( $news_icons[ $news_type ] ) ) {
                   $news_icon_url = get_stylesheet_directory_uri() . $news_icons[ $news_type ];
-                  echo '<img src="' . esc_url( $news_icon_url ) . '" alt="">';
+                  echo '<img class="news_icon" src="' . esc_url( $news_icon_url ) . '" alt="">';
               }
               ?>
             </a>
