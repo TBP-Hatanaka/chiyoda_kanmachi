@@ -121,6 +121,14 @@ body {
   margin: 0;
   padding: 0;
 }
+.news_link {
+  color: #222;
+  text-decoration: none;
+  transition: all .3s;
+}
+.news_link:hover {
+  color: #eb6d9a;
+}
 a, a:link {
   color: #eb6d9a;
   text-decoration: none;
@@ -269,7 +277,7 @@ footer p.copy {
 Common
 ==========================*/
 .main {
-  margin-top: 70px;
+  margin-top: 0;
   padding: 0;
   width: 100%;
 }
@@ -585,7 +593,7 @@ base
     padding: 0;
   }
   .main {
-    margin-top: 12vw;
+    margin-top: 0;
   }
   /*==================
     Header
