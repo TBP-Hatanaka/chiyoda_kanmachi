@@ -571,7 +571,7 @@ base
     font-size: 3vw;
   }
   .sp {
-    display: block
+    display: block;
   }
   .pc {
     display: none;
