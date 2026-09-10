@@ -35,10 +35,10 @@
               ?>
               <tr class="news-table__summary">
                 <td class="news-table__date">
-                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
+                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news2'); ?></a>
                 </td>
                 <td class="news-table__title">
-                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_title ); ?></a>
+                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
                 </td>
                 <td class="news-table__icon">
                   <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
@@ -50,7 +50,9 @@
               </tr>
               <?php if ( 'standard' === $news_type ) : ?>
                 <tr class="news-table__detail">
-                  <td colspan="3"><?php echo wp_kses_post( $news_detail ); ?></td>
+                  <td>
+                  </td>
+                  <td colspan="2"><?php the_sub_field('index_news4'); ?></td>
                 </tr>
               <?php endif; ?>
             <?php endwhile; ?>
