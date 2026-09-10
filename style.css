@@ -269,6 +269,7 @@ Common
 ==========================*/
 .main {
   margin-top: 70px;
+  padding: 0;
   width: 100%;
 }
 /*wrap*/

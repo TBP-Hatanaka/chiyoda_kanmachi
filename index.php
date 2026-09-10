@@ -5,6 +5,23 @@
       <img src="<?php the_field('index_image_sp'); ?>" alt="<?php the_field('index_image_alt'); ?>" class="sp">
       <p>写真協力：千代田区広報広聴課</p>
   </section>
+  
+  <section id="news">
+    <div class="wrap">
+      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+      <?php if( have_rows('index_news') ): ?>
+        <?php while ( have_rows('index_news') ) : the_row(); ?>
+          <div class="faq2">
+            <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/timetravelers.pdf' ); ?>" target="_blank">
+              <span class="date"><?php the_sub_field('index_news2'); ?></span>
+              <p><?php the_sub_field('index_news3'); ?></p>
+            </a>
+          </div>
+          <hr>
+        <?php endwhile; ?>
+    <?php endif; ?>
+  </section>
+
   <section id="news">
     <div class="wrap">
       <h2>
@@ -120,110 +137,30 @@
 2024年11月6日（水）～2025年2月5日（水）（pdf）</p>
             </a>
         </div>
-<!--
-	<dl class="faq">
-            <dt>
-               <span class="date">2024/03/12</span>
-              <p>『千代田のさくら祭り2024公式ガイドMAP』東京国立近代美術館『美術館の春まつり』頁について</p>
-            </dt>
-            <dd>
-		2024年3月発行の『千代田のさくら祭り2024公式ガイドMAP』の次の部分に訂正がございます。<br>
-              【該当箇所】東京国立近代美術館『美術館の春まつり』<br />
-			「中平卓馬　火―氾濫」観覧料金箇所<br />
-		【誤】※高校生以下および18歳未満、<span style="border-bottom: solid 1px red;">65歳以上</span>、障害者手帳をお持ちの方とその付添者（1名）は無料<br>
-		【正】 ※高校生以下および18歳未満、障害者手帳をお持ちの方とその付添者（1名）は無料<br>
-		詳細は<a href="https://www.momat.go.jp/topics/20240311">東京国立近代美術館の公式ホームページ</a>をご覧ください。
-            </dd>
-          </dl>
-
-	<dl class="faq">
-            <dt>
-               <span class="date">2024/03/12</span>
-              <p>『千代田のさくら祭り2024公式ガイドMAP』について</p>
-            </dt>
-            <dd>
-		2024年3月発行の『千代田のさくら祭り2024公式ガイドMAP』の次の部分に訂正がございます。<br>
-              謹んでお詫び申し上げますとともに、ここに訂正いたします。（2024年3月12日）<br />
-		【頁/位置】23頁/上段1行目<br>
-		【誤】千鳥ヶ淵宴会会場<br>
-		【正】千鳥ヶ淵会場周辺<br>
-		「なお、「千鳥ヶ淵公園」では3月22日（金）～3月24日（日）各日ともに11：00～18：00まで飲食ブースを出店しています。
-          </dl>
-
-	<dl class="faq">
-            <dt>
-               <span class="date">2024/03/08</span>
-              <p>「ちよだよりみちさんぽ2024」サイトを公開しました</p>
-            </dt>
-            <dd>
-              昨年に引き続き、千代田区内の大学生が「千代田さくら2024ガイドMAP」に掲載するコンテンツとしてサイトを企画しました。<br />
-詳しくは<a href="https://kanmachi.com/yorimichi2024/" target="_blank">「ちよだよりみちさんぽ2024」サイト</a>をご覧ください。
-            </dd>
-          </dl>
-
-	<dl class="faq">
-            <dt>
-               <span class="date">2024/03/06</span>
-              <p>無料シャトルバスさくら祭り号の運行、千代田さくら祭り2024公式ガイドMAP配布場所のご案内</p>
-            </dt>
-            <dd>
-		<b>無料シャトルバスさくら祭り号の運行</b><br>
-              3月23日（土）・24日（日）の二日間「丸の内シャトルバス」のコースを延伸し「さくら祭り号」を運行します。乗り降り自由ですのでぜひ千代田区内の回遊にご利用ください！<br /><br />
-		<b>千代田さくら祭り2024公式ガイドMAP</b><br>
-		毎年20万部を発行している千代田さくら祭り2024公式ガイドMAPを今年も配布します。<br>
-		千代田区内のMAPやさくら散策のおすすめコース、お店の情報など情報盛りだくさんです。（3月12日ごろから順次配布）ぜひ散策にお役立てください。<br><br>
-		さくら祭り号、公式ガイドMAPの詳しい情報は<a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura_bus.pdf' ); ?>" target="_blank">こちら</a>からご覧いただけます。<br>
-		※時刻表はあくまで目安です。道の混雑状況により大幅に遅れる可能性がございます。<br>
-		※配布場所ですでに配布終了の場合はご了承ください。
-            </dd>
-          </dl>-->
-<!--	<dl class="faq">
-            <dt>
-               <span class="date">2021/08/30</span>
-              <p>「第2回千代田お弁当大賞」事務局からのお知らせ<br />コロナ禍の緊急事態宣言の延長に伴い、参加店申込締め切りを9月17日まで延長します。</p>
-            </dt>
-            </dl>
-
-<!--		<dl class="faq">
-            <dt>
-               <span class="date">2021/08/05</span>
-              <p>「第２回千代田お弁当大賞」サイトのご案内【参加店募集】</p>
-            </dt>
-            <dd>
-              飲食店の皆さまがコロナ禍で新たなビジネスチャンスとして生み出したテイクアウトお弁当にフォーカスして、千代田区内の飲食店を美味しく応援するイベントを今年も開催します。
-詳しくは<a href="https://www.kanmachi.com/obento2021entry/" target="_blank">「第２回千代田お弁当大賞」サイト</a>をご覧ください。
-            </dd>
-          </dl>-->
-
-<!--        <div class="faq2">
-            <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/sakura2021map_20201224.pdf' ); ?>" target="_blank">
-              <span class="date">2020/12/14</span><p>「千代田さくら祭り 2021 公式ガイド MAP」発行中止のご連絡（pdf）</p>
-            </a>
-        </div>-->
-        <!--/faq2ここまで-->
-        <!--↓畳む内容がある場合はfaq、dl内のdt、ddごとを複製しても、あるいはdlごと複製してもOK-->
-<!--       <dl class="faq">
-            <dt>
-               <span class="date">2020/10/09</span>
-              <p>お弁当大賞サイトのご案内</p>
-            </dt>
-            <dd>
-              千代田区内の飲食店を応援します。<br>
-新型コロナウイルスの蔓延で窮地に立たされた飲食店の皆様が、感染拡大を防ぎながら新たなビジネスチャンスとして生み出したテイクアウトのお弁当にフォーカスして、千代田区内の飲食店を美味しく応援するイベントです。<br>
-詳しくは<a href="https://kanmachi.com/obento/" target="_blank">お弁当大賞サイト</a>をご覧ください。
-            </dd>
-          </dl>-->
-        <!--/faqここまで-->
-         <!--↓畳む内容が無い場合はfaq2、div内のaごとを複製しても、あるいはdivごと複製してもOK-->
-<!--         <div class="faq2">
-            <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/pdf/tenpo_20200612.pdf' ); ?>" target="_blank">
-              <span class="date">2020/10/09</span><p>ガイドMAP掲載店舗のテイクアウト＆デリバリー対応店舗リストはこちら（pdf）</p>
-            </a>
-        </div>-->
-        <!--/faq2ここまで-->
         <hr>
     </div>
   </section>
+
+
+  <section id="news">
+    <div class="wrap">
+    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧">
+      <?php if( have_rows('index_event') ): ?>
+        <?php while ( have_rows('index_event') ) : the_row(); ?>
+          <ul class="flex">
+            <li>
+              <a href="<?php the_sub_field('index_event4'); ?>" target="_blank">
+                <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
+                <h4><?php the_sub_field('index_event1'); ?></h4>
+                <p><?php the_sub_field('index_event2'); ?></p>
+              </a>
+            </li>
+          </ul>
+        <?php endwhile; ?>
+    <?php endif; ?>
+  </section>
+
+
   <section id="event" class="bg_g">
     <div class="wrap">
       <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧"></strong></h2>
@@ -288,16 +225,16 @@
         </ul>
     </div>
   </section>
-  <section id="top_about" class="bg_p"><a href="<?php echo esc_url( home_url( '/about.php' ) ); ?>">
+  <section id="top_about" class="bg_p"><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">
     <div class="wrap">
      <p><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_pc.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="pc"><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_sp.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="sp"></p>
     </div></a>
   </section>
   <section id="top_inq">
     <div class="wrap bg_gr">
-      <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_inquiry.png' ); ?>" alt="お問い合わせ"></strong></h2>
+      <h2><strong><img src="<?php the_field('index_image2'); ?>" alt="お問い合わせ"></strong></h2>
         <div class="btnarea">
-        <a href="<?php echo esc_url( home_url( '/inquiry/contact.php' ) ); ?>" class="btn">お問い合わせフォームはこちら</a></div>
+        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn">お問い合わせフォームはこちら</a></div>
     </div>
   </section>
 </article>
