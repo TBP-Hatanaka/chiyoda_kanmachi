@@ -134,14 +134,15 @@ body {
   table-layout: fixed;
 }
 .news-table td {
-  vertical-align: middle;
+  vertical-align: unset;
+  background-color: #ffffff;
 }
 .news-table__summary td {
   border-top: 1px solid #ccc;
   padding: 1em .5em;
 }
 .news-table__date {
-  width: 8em;
+  width: 6em;
   white-space: nowrap;
   text-align: left;
 }
