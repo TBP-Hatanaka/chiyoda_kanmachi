@@ -148,9 +148,9 @@
       <h2>
         <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_event.png' ); ?>" alt="開催中のイベント一覧">
       </h2>
-      <?php if( have_rows('index_event') ): ?>
-        <?php while ( have_rows('index_event') ) : the_row(); ?>
-          <ul class="flex">
+      <ul class="flex">
+        <?php if( have_rows('index_event') ): ?>
+          <?php while ( have_rows('index_event') ) : the_row(); ?>
             <li>
               <a href="<?php the_sub_field('index_event4'); ?>" target="_blank">
                 <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
@@ -158,9 +158,9 @@
                 <p><?php the_sub_field('index_event2'); ?></p>
               </a>
             </li>
-          </ul>
-        <?php endwhile; ?>
-    <?php endif; ?>
+          <?php endwhile; ?>
+      <?php endif; ?>
+    </ul>
   </section>
 
 
