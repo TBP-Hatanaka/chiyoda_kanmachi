@@ -1143,3 +1143,217 @@ mediaクエリ【スマホ】
     font-size: 4vw;
   }
 }
+
+/* **********************************************************
+■　About
+********************************************************** */
+#about #mvarea img {
+  width: 100%;
+}
+#container .wrap {
+  width: 1024px;
+}
+#about #container h2 img {
+  filter: brightness(0%);
+}
+#about .intro p {
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  font-size: 1.25rem;
+  font-weight: 300;
+    margin-bottom: 1em;
+}
+#about .intro ul {
+  margin: 2.5rem auto;
+}
+#about .intro li {
+  position: relative;
+}
+#about .intro li img {
+  width: 94%;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 1.5rem
+}
+#about .intro ul li:first-of-type {
+  text-align: left;
+}
+#about .intro li:first-of-type::after {
+  content: '';
+  position: absolute;
+  margin: auto;
+  border: 1px solid #222;
+  z-index: 0;
+}
+#about .intro li p {
+  font-size: 1rem;
+  padding: 1.5em;
+  background: #f8f8f8;
+}
+/*info*/
+#about .info {
+  font-size: 1.25rem;
+  padding: 1.5em;
+  margin: 3rem auto 0;
+  border: 1px solid #222;
+  overflow: hidden;
+}
+#about .info strong {
+  display: inline-block;
+  margin: 0 auto .5em;
+}
+#about .info ul {
+  display: inline-block;
+}
+#about .info li {
+  text-align: left;
+}
+#about .info ul li:nth-of-type(2n-1).bdr_d1 {
+  border-bottom: none;
+}
+#about .info ul li.bdr_d2 {
+  width: 100%;
+  border-bottom: 1px dashed #999;
+}
+/*
+#about #container .info{
+    font-size:1.25rem;
+    padding:1.5em;
+    margin:3rem auto 0;
+    border:1px solid #222;
+    overflow: hidden;
+}
+#about #container .info ul{
+    display: inline-block;
+}
+#about #container .info li{
+    text-align: left;
+}*/
+/*+++++++++++++++++++++++++++
+mediaクエリ【PC】
++++++++++++++++++++++++++++*/
+@media (max-width: 1023px) {
+  #container .wrap {
+    width: 100%;
+  }
+}
+@media (min-width: 751px) {
+  #about .intro ul li:first-of-type {
+    width: 42%;
+    margin: 0 3% 0 0;
+    text-align: left;
+  }
+  #about .intro li:first-of-type::after {
+    width: 94%;
+    height: 93%;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  #about .intro ul li:last-of-type {
+    width: 55%;
+  }
+  .flex.reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  #about .intro ul.reverse li:first-of-type {
+    margin: 0;
+  }
+  #about .intro ul.reverse li:last-of-type {
+    margin: 0 3% 0 0;
+  }
+  #about .info li {
+    float: left;
+    margin-bottom: .5em;
+  }
+  #about .info ul li:nth-of-type(2n-1) {
+    border-right: 1px solid #222;
+    padding-right: 1em;
+    width: 5.2em;
+  }
+  #about .info ul li:nth-of-type(2n) {
+    padding-left: 1em;
+  }
+  #about .info ul li:nth-of-type(2n+1) {
+    clear: both;
+  }
+  #about .info ul li:last-of-type {
+    margin-bottom: 0
+  }
+  #about .info ul li.bdr_d2 {
+    margin: 0 0 1em 0;
+  }
+  /*info
+#about #container .info li{
+    float: left;
+    margin-bottom: .5em;
+}
+#about #container .info ul li:nth-of-type(2n-1){
+    border-right:1px solid #222;
+    padding-right:1em;
+}
+#about #container .info ul li:nth-of-type(2n){
+    padding-left:1em;
+}
+#about #container .info ul li:nth-of-type(2n+1){
+    clear: both;
+}
+#about #container .info ul li:last-of-type{
+    margin-bottom:0
+}*/
+}
+/*+++++++++++++++++++++++++++
+mediaクエリ【スマホ】
++++++++++++++++++++++++++++*/
+@media (max-width: 750px) {
+  #about #container h2 img {
+    height: 2.3em;
+  }
+  #about .intro p {
+    font-size: 3.6vw;
+  }
+  #about .intro ul {
+    margin: 2rem auto 1rem auto;
+  }
+  #about .intro ul li:first-of-type {
+    margin-bottom: .5rem;
+    width: 100%;
+  }
+  #about .intro li img {
+    width: 80vw;
+  }
+  #about .intro li:first-of-type::after {
+    width: 80vw;
+    height: 60vw;
+    top: 4vw;
+    left: 4vw;
+  }
+  #about .intro li:last-of-type {
+    margin-right: -1rem;
+  }
+  #about .intro li p {
+    font-size: 3.2vw;
+  }
+  /*info*/
+#about  .info {
+    font-size: 3.6vw;
+  margin: 9vw auto 3vw auto;
+  }
+  #about .info ul li:nth-of-type(2n-1) {
+    border-bottom: 1px solid #222;
+    padding-bottom: .5em;
+    margin-bottom: .5em
+  }
+#about  .info ul li:nth-of-type(2n) {
+    padding-bottom: .5em;
+    margin-bottom: 1em
+  }
+  #about  .info ul li:last-of-type {
+    margin-bottom: 0
+  }
+  #about  .info ul li.bdr_d1{
+      margin:-1em 0 0 0;
+} 
