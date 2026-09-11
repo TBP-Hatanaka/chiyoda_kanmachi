@@ -24,7 +24,7 @@ get_header( null, $header_args );
               <p><?php the_sub_field('about_text'); ?></p>
             <?php endif; ?>
             <?php if( get_row_layout() == 'about_contents2' ): ?>
-              <ul class="flex<?php echo 1 === $about_image_index % 2 ? ' reverse' : ''; ?>">
+              <ul class="flex">
                 <li>
                   <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
                 </li>
@@ -32,7 +32,6 @@ get_header( null, $header_args );
                   <?php the_sub_field('about_text'); ?>
                 </li>
               </ul>
-              <?php $about_image_index++; ?>
             <?php endif; ?>
           <?php endwhile; ?>
         <?php endif; ?>
