@@ -90,7 +90,7 @@ $(document).ready(function() {
 });
 
   // トップページのお知らせ詳細を開閉
-  var newsToggleDuration = 3000;
+  var newsToggleDuration = 300;
 
   $('.news-toggle').on('click', function () {
     var $button = $(this);

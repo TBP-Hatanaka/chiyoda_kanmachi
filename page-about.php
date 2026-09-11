@@ -29,7 +29,7 @@ get_header( null, $header_args );
                   <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
                 </li>
                 <li>
-                  <p><?php the_sub_field('about_text'); ?></p>
+                  <?php the_sub_field('about_text'); ?>
                 </li>
               </ul>
               <?php $about_image_index++; ?>
