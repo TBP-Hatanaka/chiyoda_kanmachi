@@ -1298,11 +1298,15 @@ mediaクエリ【PC】
     margin: 0 3% 0 0;
     text-align: left;
   }
-  #about .intro .intro_img::after {
+  #about .intro .about_image1 {
+    z-index: 2;
+  }
+  #about .intro .about_image2 {
     width: 94%;
     height: 93%;
     top: 1.5rem;
     left: 1.5rem;
+    z-index: 1;
   }
   #about .intro .intro_txt {
     width: 55%;
