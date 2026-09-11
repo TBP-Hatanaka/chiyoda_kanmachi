@@ -29,6 +29,8 @@
               $news_title = get_sub_field( 'index_news3' );
               $news_detail = get_sub_field( 'index_news4' );
               $news_url = get_sub_field( 'index_news5' );
+              $news_row_index = get_row_index();
+              $news_detail_id = 'news-detail-' . $news_row_index;
               $news_icon_url = isset( $news_icons[ $news_type ] )
                   ? get_stylesheet_directory_uri() . $news_icons[ $news_type ]
                   : '';
@@ -41,15 +43,19 @@
                   <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
                 </td>
                 <td class="news-table__icon">
-                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
-                    <?php if ( $news_icon_url ) : ?>
+                  <?php if ( 'standard' === $news_type && $news_icon_url ) : ?>
+                    <button class="news-toggle" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
                       <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
-                    <?php endif; ?>
-                  </a>
+                    </button>
+                  <?php elseif ( $news_icon_url ) : ?>
+                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
+                      <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
+                    </a>
+                  <?php endif; ?>
                 </td>
               </tr>
               <?php if ( 'standard' === $news_type ) : ?>
-                <tr class="news-table__detail">
+                <tr id="<?php echo esc_attr( $news_detail_id ); ?>" class="news-table__detail" hidden>
                   <td>
                   </td>
                   <td colspan="2"><?php the_sub_field('index_news4'); ?></td>

@@ -82,12 +82,25 @@ $(document).ready(function() {
         }
     });
     
-   $(function () {
+  $(function () {
   $(".faq dt").on("click", function () {
     $(this).next().slideToggle('fast');
     $(this).toggleClass("active");
   });
 });
+
+  // トップページのお知らせ詳細を開閉
+  $('.news-toggle').on('click', function () {
+    var $button = $(this);
+    var detailId = $button.attr('aria-controls');
+    var $detail = $('#' + detailId);
+    var isOpen = $button.attr('aria-expanded') === 'true';
+
+    $button
+      .attr('aria-expanded', String(!isOpen))
+      .attr('aria-label', isOpen ? '詳細を表示' : '詳細を閉じる')
+      .toggleClass('is-open', !isOpen);
+    $detail.prop('hidden', isOpen);
+  });
     
 })
-

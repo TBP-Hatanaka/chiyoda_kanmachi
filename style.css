@@ -153,6 +153,20 @@ body {
   width: 3em;
   text-align: right;
 }
+.news-toggle {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.news-toggle .news_icon {
+  transition: transform .3s ease;
+}
+.news-toggle.is-open .news_icon {
+  transform: rotate(180deg);
+}
 .news-table .news_link {
   display: block;
 }
