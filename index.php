@@ -58,7 +58,7 @@
                 <tr id="<?php echo esc_attr( $news_detail_id ); ?>" class="news-table__detail" hidden>
                   <td>
                   </td>
-                  <td colspan="2"><?php the_sub_field('index_news4'); ?></td>
+                  <td colspan="2"><p class="news-table__text"><?php the_sub_field('index_news4'); ?></p></td>
                 </tr>
               <?php endif; ?>
             <?php endwhile; ?>

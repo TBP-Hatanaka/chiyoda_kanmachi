@@ -44,6 +44,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+table:not(.has-border-color) :where(th, td) {
+  border: none;
+}
 fieldset, img {
   border: 0;
   vertical-align: bottom;
@@ -139,15 +142,23 @@ body {
 }
 .news-table__summary td {
   border-top: 1px solid #ccc;
-  padding: 1em .5em;
+  padding: 1em 0.5em;
 }
 .news-table__date {
-  width: 6em;
+  width: 7em;
   white-space: nowrap;
   text-align: left;
 }
 .news-table__title {
   text-align: left;
+}
+.news-table__text::before {
+  top: 1.43em;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #222;
+  background-image: url(./img/top/ic_qanda_a.png);
 }
 .news-table__icon {
   width: 3em;
