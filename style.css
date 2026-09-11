@@ -1284,20 +1284,6 @@ mediaクエリ【スマホ】
   width: 100%;
   border-bottom: 1px dashed #999;
 }
-/*
-#about #container .info{
-    font-size:1.25rem;
-    padding:1.5em;
-    margin:3rem auto 0;
-    border:1px solid #222;
-    overflow: hidden;
-}
-#about #container .info ul{
-    display: inline-block;
-}
-#about #container .info li{
-    text-align: left;
-}*/
 /*+++++++++++++++++++++++++++
 mediaクエリ【PC】
 +++++++++++++++++++++++++++*/
@@ -1307,6 +1293,12 @@ mediaクエリ【PC】
   }
 }
 @media (min-width: 751px) {
+  #about .intro .intro_img {
+    width: 42%;
+    margin: 0 3% 0 0;
+    text-align: left;
+  }
+
   #about .intro ul li:first-of-type {
     width: 42%;
     margin: 0 3% 0 0;
