@@ -18,7 +18,6 @@ get_header( null, $header_args );
       </h2>
       <div class="intro">
         <?php if( have_rows('about_contents') ): ?>
-          <?php $about_image_index = 0; ?>
           <?php while ( have_rows('about_contents') ) : the_row(); ?>
             <?php if( get_row_layout() == 'about_contents1' ): ?>
               <p><?php the_sub_field('about_text'); ?></p>
