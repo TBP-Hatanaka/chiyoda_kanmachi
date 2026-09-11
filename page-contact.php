@@ -1,18 +1,18 @@
 <?php
 $header_args = array(
-    'page_title'   => '千代田観光まちづくり実行委員会とは',
+    'page_title'   => 'お問い合わせ',
     'current_page' => 'contact',
 );
 get_header( null, $header_args );
 ?>
 <article class="main">
-  <section id="mvarea"> <img src="../img/common/mv.jpg" alt="千代田写真"> </section>
+  <section id="mvarea"> <img src="./img/common/mv.jpg" alt="千代田写真"> </section>
   <section id="cantainer">
     <div class="wrap">
-      <h2><strong><img src="../img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong></h2>
+      <h2><strong><img src="./img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong></h2>
       <p> <span class="req">※</span>は必須項目です。</p>
         
-<form id="main_contact" method="post" action="confirm.php">
+<form id="main_contact" method="post" action="page-confirm.php">
     
   <table>
       <tr>

@@ -166,14 +166,6 @@ a:hover img {
 .news-table__title {
   text-align: left;
 }
-.news-table__text::before {
-  top: 1.43em;
-  left: 0;
-  width: 1em;
-  height: 1em;
-  background-color: #222;
-  background-image: url(./img/top/ic_qanda_a.png);
-}
 .news-table__icon {
   width: 3em;
   text-align: center;
@@ -196,13 +188,21 @@ a:hover img {
   display: block;
 }
 .news-table__detail td {
-  border-top: 1px dashed #ccc;
   padding: 0 1em;
   text-align: left;
 }
 .news-table__detail-inner {
   padding: 1em 0;
+  border-top: 1px dashed #ccc;
 }
+.news-table__detail__icon {
+  top: 1.43em;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #222;
+}
+
 .left {
   float: left;
 }
