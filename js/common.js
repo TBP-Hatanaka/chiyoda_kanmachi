@@ -92,17 +92,18 @@ $(document).ready(function() {
   // トップページのお知らせ詳細を開閉
   var newsToggleDuration = 300;
 
-  $('.news-toggle').on('click', function () {
-    var $button = $(this);
-    var detailId = $button.attr('aria-controls');
+  function toggleNewsDetail($trigger) {
+    var detailId = $trigger.attr('aria-controls');
     var $detail = $('#' + detailId);
     var $detailInner = $detail.find('.news-table__detail-inner');
-    var isOpen = $button.attr('aria-expanded') === 'true';
+    var $triggers = $('.news-detail-trigger[aria-controls="' + detailId + '"]');
+    var isOpen = $trigger.attr('aria-expanded') === 'true';
 
-    $button
+    $triggers
       .attr('aria-expanded', String(!isOpen))
-      .attr('aria-label', isOpen ? '詳細を表示' : '詳細を閉じる')
       .toggleClass('is-open', !isOpen);
+    $triggers.filter('.news-toggle')
+      .attr('aria-label', isOpen ? '詳細を表示' : '詳細を閉じる');
 
     if (isOpen) {
       $detailInner.stop(true, true).slideUp(newsToggleDuration, function () {
@@ -116,6 +117,17 @@ $(document).ready(function() {
         .stop(true, true)
         .hide()
         .slideDown(newsToggleDuration);
+    }
+  }
+
+  $('.news-detail-trigger').on('click', function () {
+    toggleNewsDetail($(this));
+  });
+
+  $('.news-detail-trigger[role="button"]').on('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleNewsDetail($(this));
     }
   });
     

@@ -186,6 +186,9 @@ a:hover img {
 .news-table .news_link {
   display: block;
 }
+.news-table .news-detail-trigger {
+  cursor: pointer;
+}
 .news-table__detail td {
   padding: 0 1em;
   text-align: left;
@@ -201,6 +204,8 @@ a:hover img {
   width: 1em;
   height: 1em;
   background-color: #222;
+  margin: 0.5em;
+  margin-right: 2em;
 }
 
 .left {

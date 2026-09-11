@@ -47,13 +47,15 @@
                 <td class="news-table__title">
                   <?php if ( $has_news_url ) : ?>
                     <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
+                  <?php elseif ( 'standard' === $news_type ) : ?>
+                    <p class="news_link news-detail-trigger" role="button" tabindex="0" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>"><?php the_sub_field('index_news3'); ?></p>
                   <?php else : ?>
                     <p class="news_link"><?php the_sub_field('index_news3'); ?></p>
                   <?php endif; ?>
                 </td>
                 <td class="news-table__icon">
                   <?php if ( 'standard' === $news_type && $news_icon_url ) : ?>
-                    <button class="news-toggle" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
+                    <button class="news-toggle news-detail-trigger" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
                       <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
                     </button>
                   <?php elseif ( $news_icon_url && $has_news_url ) : ?>
