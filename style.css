@@ -192,6 +192,7 @@ a:hover img {
 }
 .news-table__detail-inner {
   padding: 1em 0;
+  display: flex;
   border-top: 1px dashed #ccc;
 }
 .news-table__detail__icon {

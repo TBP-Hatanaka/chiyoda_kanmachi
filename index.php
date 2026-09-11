@@ -71,7 +71,7 @@
                   </td>
                   <td colspan="2">
                     <div class="news-table__detail-inner">
-                      <img class="news-table__detail__icon" src="./img/top/ic_qanda_a.png">
+                      <img class="news-table__detail__icon" src="./img/common/ic_qanda_a.png">
                       <p class="news-table__text"><?php the_sub_field('index_news4'); ?></p>
                     </div>
                   </td>
