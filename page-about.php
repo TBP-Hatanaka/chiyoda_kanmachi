@@ -23,6 +23,32 @@ get_header( null, $header_args );
               <p><?php the_sub_field('about_text'); ?></p>
             <?php endif; ?>
             <?php if( get_row_layout() == 'about_contents2' ): ?>
+              <div class="flex">
+                <div>
+                  <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
+                </div>
+                <div>
+                  <?php the_sub_field('about_text'); ?>
+                </div>
+              </div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div>
+
+  <section id="container">
+    <div class="wrap">
+      <h2>
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_pc.png' ); ?>"  alt="千代田観光まちづくり実行委員会とは" class="pc">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_sp.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="sp">
+      </h2>
+      <div class="intro">
+        <?php if( have_rows('about_contents') ): ?>
+          <?php while ( have_rows('about_contents') ) : the_row(); ?>
+            <?php if( get_row_layout() == 'about_contents1' ): ?>
+              <p><?php the_sub_field('about_text'); ?></p>
+            <?php endif; ?>
+            <?php if( get_row_layout() == 'about_contents2' ): ?>
               <ul class="flex">
                 <li>
                   <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
