@@ -1298,6 +1298,21 @@ mediaクエリ【PC】
     margin: 0 3% 0 0;
     text-align: left;
   }
+  #about .intro .intro_img::after {
+    width: 94%;
+    height: 93%;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  #about .intro .intro_txt {
+    width: 55%;
+  }
+  #about .intro .intro_txt p {
+    font-size: 1rem;
+    padding: 1.5em;
+    background: #f8f8f8;
+  }
+
 
   #about .intro ul li:first-of-type {
     width: 42%;
@@ -1346,24 +1361,6 @@ mediaクエリ【PC】
   #about .info ul li.bdr_d2 {
     margin: 0 0 1em 0;
   }
-  /*info
-#about #container .info li{
-    float: left;
-    margin-bottom: .5em;
-}
-#about #container .info ul li:nth-of-type(2n-1){
-    border-right:1px solid #222;
-    padding-right:1em;
-}
-#about #container .info ul li:nth-of-type(2n){
-    padding-left:1em;
-}
-#about #container .info ul li:nth-of-type(2n+1){
-    clear: both;
-}
-#about #container .info ul li:last-of-type{
-    margin-bottom:0
-}*/
 }
 /*+++++++++++++++++++++++++++
 mediaクエリ【スマホ】
