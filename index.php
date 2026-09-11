@@ -46,9 +46,9 @@
                 </td>
                 <td class="news-table__title">
                   <?php if ( $has_news_url ) : ?>
-                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_title ); ?></a>
+                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
                   <?php else : ?>
-                    <p class="news_link"><?php echo esc_html( $news_title ); ?></p>
+                    <p class="news_link"><?php the_sub_field('index_news3'); ?></p>
                   <?php endif; ?>
                 </td>
                 <td class="news-table__icon">
