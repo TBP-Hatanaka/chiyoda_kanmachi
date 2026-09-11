@@ -41,14 +41,14 @@
                   <?php if ( $has_news_url ) : ?>
                     <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
                   <?php else : ?>
-                    <span class="news_link"><?php echo esc_html( $news_date ); ?></span>
+                    <p class="news_link"><?php echo esc_html( $news_date ); ?></p>
                   <?php endif; ?>
                 </td>
                 <td class="news-table__title">
                   <?php if ( $has_news_url ) : ?>
                     <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_title ); ?></a>
                   <?php else : ?>
-                    <span class="news_link"><?php echo esc_html( $news_title ); ?></span>
+                    <p class="news_link"><?php echo esc_html( $news_title ); ?></p>
                   <?php endif; ?>
                 </td>
                 <td class="news-table__icon">
