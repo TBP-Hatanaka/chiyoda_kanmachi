@@ -90,17 +90,33 @@ $(document).ready(function() {
 });
 
   // トップページのお知らせ詳細を開閉
+  var newsToggleDuration = 3000;
+
   $('.news-toggle').on('click', function () {
     var $button = $(this);
     var detailId = $button.attr('aria-controls');
     var $detail = $('#' + detailId);
+    var $detailInner = $detail.find('.news-table__detail-inner');
     var isOpen = $button.attr('aria-expanded') === 'true';
 
     $button
       .attr('aria-expanded', String(!isOpen))
       .attr('aria-label', isOpen ? '詳細を表示' : '詳細を閉じる')
       .toggleClass('is-open', !isOpen);
-    $detail.prop('hidden', isOpen);
+
+    if (isOpen) {
+      $detailInner.stop(true, true).slideUp(newsToggleDuration, function () {
+        $detail.prop('hidden', true).css('display', '');
+        $detailInner.css('display', '');
+      });
+    } else {
+      $detail
+        .prop('hidden', false);
+      $detailInner
+        .stop(true, true)
+        .hide()
+        .slideDown(newsToggleDuration);
+    }
   });
     
 })
