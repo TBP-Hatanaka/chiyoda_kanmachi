@@ -29,6 +29,7 @@
               $news_title = get_sub_field( 'index_news3' );
               $news_detail = get_sub_field( 'index_news4' );
               $news_url = get_sub_field( 'index_news5' );
+              $has_news_url = is_string( $news_url ) && '' !== trim( $news_url );
               $news_row_index = get_row_index();
               $news_detail_id = 'news-detail-' . $news_row_index;
               $news_icon_url = isset( $news_icons[ $news_type ] )
@@ -37,20 +38,30 @@
               ?>
               <tr class="news-table__summary">
                 <td class="news-table__date">
-                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news2'); ?></a>
+                  <?php if ( $has_news_url ) : ?>
+                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
+                  <?php else : ?>
+                    <span class="news_link"><?php echo esc_html( $news_date ); ?></span>
+                  <?php endif; ?>
                 </td>
                 <td class="news-table__title">
-                  <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
+                  <?php if ( $has_news_url ) : ?>
+                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_title ); ?></a>
+                  <?php else : ?>
+                    <span class="news_link"><?php echo esc_html( $news_title ); ?></span>
+                  <?php endif; ?>
                 </td>
                 <td class="news-table__icon">
                   <?php if ( 'standard' === $news_type && $news_icon_url ) : ?>
                     <button class="news-toggle" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
                       <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
                     </button>
-                  <?php elseif ( $news_icon_url ) : ?>
+                  <?php elseif ( $news_icon_url && $has_news_url ) : ?>
                     <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
                       <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
                     </a>
+                  <?php elseif ( $news_icon_url ) : ?>
+                    <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
                   <?php endif; ?>
                 </td>
               </tr>
