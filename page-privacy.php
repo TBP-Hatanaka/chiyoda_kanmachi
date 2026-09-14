@@ -13,7 +13,7 @@ get_header( null, $header_args );
   <section id="policy">
     <div class="wrap">
       <h2>
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_privacy.png' ); ?>" alt="プライバシーポリシー">
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_privacy.png' ); ?>" alt="プライバシーポリシー"></strong>
       </h2>
       <p>千代田観光まちづくり実行委員会は、個人情報について個人情報保護に関する法令及びその他の規範を遵守いたします。</p>
     </div>

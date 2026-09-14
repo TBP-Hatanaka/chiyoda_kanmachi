@@ -13,8 +13,8 @@ get_header( null, $header_args );
   <section id="container">
     <div class="wrap">
       <h2>
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_pc.png' ); ?>"  alt="千代田観光まちづくり実行委員会とは" class="pc">
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_sp.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="sp">
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_pc.png' ); ?>"  alt="千代田観光まちづくり実行委員会とは" class="pc"></strong>
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_about_sp.png' ); ?>" alt="千代田観光まちづくり実行委員会とは" class="sp"></strong>
       </h2>
       <div class="intro">
         <?php if( have_rows('about_contents') ): ?>

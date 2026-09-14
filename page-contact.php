@@ -12,7 +12,9 @@ get_header( null, $header_args );
   
   <section id="cantainer">
     <div class="wrap">
-      <h2><strong><img src="./img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong></h2>
+      <h2>
+        <strong><img src="./img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong>
+      </h2>
       <p> <span class="req">※</span>は必須項目です。</p>
         
 <form id="main_contact" method="post" action="page-confirm.php">

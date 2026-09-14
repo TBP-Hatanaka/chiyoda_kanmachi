@@ -9,7 +9,7 @@
   <section id="news">
     <div class="wrap">
       <h2>
-        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News">
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_news.png' ); ?>" alt="News"></strong>
       </h2>
       <?php if ( have_rows( 'index_news' ) ) : ?>
         <?php
