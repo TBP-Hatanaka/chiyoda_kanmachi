@@ -1338,7 +1338,7 @@ mediaクエリ【PC】
   }
 
 
-  #about .intro ul li:first-of-type {
+  /*#about .intro ul li:first-of-type {
     width: 42%;
     margin: 0 3% 0 0;
     text-align: left;
@@ -1351,7 +1351,7 @@ mediaクエリ【PC】
   }
   #about .intro ul li:last-of-type {
     width: 55%;
-  }
+  }*/
   .flex.reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
