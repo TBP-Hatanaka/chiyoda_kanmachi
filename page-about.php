@@ -25,8 +25,7 @@ get_header( null, $header_args );
             <?php if( get_row_layout() == 'about_contents2' ): ?>
               <div class="flex">
                 <div class="intro_img">
-                  <img class="about_image1" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
-                  <img class="about_image2" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
+                  <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
                 </div>
                 <div class="intro_txt">
                   <p><?php the_sub_field('about_text'); ?></p>

@@ -13,7 +13,7 @@ get_header( null, $header_args );
   <section id="cantainer">
     <div class="wrap">
       <h2>
-        <strong><img src="./img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong>
+        <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . './img/ttl/ttl_contact.png' ); ?>" alt="お問い合わせ"></strong>
       </h2>
       <p> <span class="req">※</span>は必須項目です。</p>
         
