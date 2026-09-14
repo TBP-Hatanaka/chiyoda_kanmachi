@@ -46,7 +46,7 @@ get_header( null, $header_args );
         <?php endif; ?>
       </div>
     </div>
-    <div class="about_info">
+    <div class="about_company">
       <strong>千代田観光まちづくり実行委員会</strong><br>
       <ul>
         <li>構成団体</li>
