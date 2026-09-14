@@ -1443,4 +1443,13 @@ mediaクエリ【スマホ】
   }
   #about  .info ul li.bdr_d1{
       margin:-1em 0 0 0;
+  }
+  #about  .about_info {
+      border: 1px solid #222;
+      width: 1024px;
+      font-size: 1.25rem;
+      padding: 1.5em;
+      margin: 3rem auto 0;
+      overflow: hidden;
+  }
 }

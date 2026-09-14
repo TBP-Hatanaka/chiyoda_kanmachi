@@ -32,11 +32,21 @@ get_header( null, $header_args );
                 </div>
               </div>
             <?php endif; ?>
+            <?php if( get_row_layout() == 'about_contents3' ): ?>
+              <div class="flex">
+                <div class="intro_txt">
+                  <?php the_sub_field('about_text3'); ?>
+                </div>
+                <div class="intro_img">
+                  <img class="about_image" src="<?php the_sub_field('about_image3'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
+                </div>
+              </div>
+            <?php endif; ?>
           <?php endwhile; ?>
         <?php endif; ?>
       </div>
     </div>
-    <div class="info">
+    <div class="about_info">
       <strong>千代田観光まちづくり実行委員会</strong><br>
       <ul>
         <li>構成団体</li>
