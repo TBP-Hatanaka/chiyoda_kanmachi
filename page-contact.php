@@ -1,7 +1,7 @@
 <?php
-session_start();
-session_regenerate_id( TRUE );
-require_once __DIR__ . '/libs/functions.php';
+if ( PHP_SESSION_ACTIVE !== session_status() ) {
+  session_start();
+}
 
 $name = isset( $_SESSION[ 'name' ] ) ? $_SESSION[ 'name' ] : NULL;
 $company = isset( $_SESSION[ 'company' ] ) ? $_SESSION[ 'company' ] : NULL;
@@ -42,7 +42,7 @@ get_header( null, $header_args );
         <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_contact.png' ); ?>" alt="お問い合わせ"></strong>
       </h2>
       <p> <span class="req">※</span>は必須項目です。</p>
-      <form id="main_contact" method="post" action="page-confirm.php">
+      <form id="main_contact" method="post" action="<?php echo esc_url( home_url( '/confirm/' ) ); ?>">
         <table>
           <tr>
             <th>
@@ -101,7 +101,7 @@ get_header( null, $header_args );
           </tr>
         </table>
         <button type="submit" class="btn btn-primary">確認画面へ</button>
-        <input type="hidden" name="ticket" value="確認画面">
+        <input type="hidden" name="ticket" value="<?php echo esc_attr( $ticket ); ?>">
       </form>
     </div>
   </section>
