@@ -1,6 +1,7 @@
 <?php
-session_start();
-require_once __DIR__ . '/libs/functions.php';
+if ( PHP_SESSION_ACTIVE !== session_status() ) {
+  session_start();
+}
 
 $_POST = checkInput( $_POST );
 if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {
