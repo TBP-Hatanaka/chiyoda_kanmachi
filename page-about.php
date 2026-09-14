@@ -20,7 +20,7 @@ get_header( null, $header_args );
         <?php if( have_rows('about_contents') ): ?>
           <?php while ( have_rows('about_contents') ) : the_row(); ?>
             <?php if( get_row_layout() == 'about_contents1' ): ?>
-              <p class="intro_caption"><?php the_sub_field('about_text'); ?></p>
+              <div class="intro_caption"><?php the_sub_field('about_text'); ?></div>
             <?php endif; ?>
             <?php if( get_row_layout() == 'about_contents2' ): ?>
               <div class="flex">
