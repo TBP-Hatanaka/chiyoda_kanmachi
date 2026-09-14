@@ -2,6 +2,7 @@
 if ( PHP_SESSION_ACTIVE !== session_status() ) {
   session_start();
 }
+require_once __DIR__ . '/libs/functions.php';
 
 $_POST = checkInput( $_POST );
 if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {
@@ -70,9 +71,7 @@ $_SESSION[ 'body' ] = $body;
 $_SESSION[ 'error' ] = $error;
 
 if ( count( $error ) > 0 ) {
-  $dirname = dirname( $_SERVER[ 'SCRIPT_NAME' ] );
-  $dirname = $dirname == DIRECTORY_SEPARATOR ? '' : $dirname;
-  $url = ( empty( $_SERVER[ 'HTTPS' ] ) ? 'http://' : 'https://' ) . $_SERVER[ 'SERVER_NAME' ] . $dirname . '/contact.php';
+  $url = home_url( '/contact/' );
   header( 'HTTP/1.1 303 See Other' );
   header( 'location: ' . $url );
   exit;
@@ -114,11 +113,11 @@ get_header( null, $header_args );
           </tr>
         </table>
       </div>
-      <form action="page-contact.php" method="post" class="confirm">
+      <form action="<?php echo esc_url( home_url( '/contact/' ) ); ?>" method="post" class="confirm">
         <button type="submit" class="btn btn-secondary">戻る</button>
       </form>
-      <form action="page-complete.php" method="post" class="confirm">
-        <input type="hidden" name="ticket" value="<?php echo h($ticket); ?>">
+      <form action="<?php echo esc_url( home_url( '/complete/' ) ); ?>" method="post" class="confirm">
+        <input type="hidden" name="ticket" value="<?php echo esc_attr( $ticket ); ?>">
         <button type="submit" class="btn btn-success">送信する</button>
       </form>
     </div>

@@ -1333,7 +1333,7 @@ mediaクエリ【PC】
     pointer-events: none;
   }
   #about .intro .intro_txt {
-    width: 55%;
+    width: 58%;
     margin: auto;
     margin-top: 0;
   }
@@ -1380,7 +1380,7 @@ mediaクエリ【PC】
     width: 1024px;
     font-size: 1.25rem;
     padding: 1.5em;
-    margin: 3rem auto 0;
+    margin: 0 auto 0;
     overflow: hidden;
   }
 }
@@ -1461,7 +1461,7 @@ mediaクエリ【スマホ】
 }
 #inquiry table th, #inquiry table td {
   text-align: left;
-  padding: .5em;
+  padding: 0.8em 1em .8em;
 }
 #inquiry table th {
   font-weight: 500;

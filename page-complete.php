@@ -2,6 +2,8 @@
 if ( PHP_SESSION_ACTIVE !== session_status() ) {
   session_start();
 }
+require_once __DIR__ . '/libs/functions.php';
+require_once __DIR__ . '/libs/mailvars.php';
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
@@ -13,9 +15,7 @@ if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {
     die( 'Access denied' );
   }
 } else {
-  $dirname = dirname( $_SERVER[ 'SCRIPT_NAME' ] );
-  $dirname = $dirname == DIRECTORY_SEPARATOR ? '' : $dirname;
-  $url = ( empty( $_SERVER[ 'HTTPS' ] ) ? 'http://' : 'https://' ) . $_SERVER[ 'SERVER_NAME' ] . $dirname . '/contact.php';
+  $url = home_url( '/contact/' );
   header( 'HTTP/1.1 303 See Other' );
   header( 'location: ' . $url );
   exit; 
