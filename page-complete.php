@@ -78,7 +78,6 @@ if ( $result ) {
 } else {
 }
  
-php
 $header_args = array(
     'page_title'   => 'お問い合わせ完了',
     'current_page' => 'complete',

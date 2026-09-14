@@ -1,9 +1,9 @@
 <?php
 //エスケープ処理を行う関数
-function h( $var ) {
+function hescape( $var ) {
   if ( is_array( $var ) ) {
-    //$varが配列の場合、h()関数をそれぞれの要素について呼び出す（再帰）
-    return array_map( 'h', $var );
+    //$varが配列の場合、hescape()関数をそれぞれの要素について呼び出す（再帰）
+    return array_map( 'hescape', $var );
   } else {
     return htmlspecialchars( $var, ENT_QUOTES, 'UTF-8' );
   }
