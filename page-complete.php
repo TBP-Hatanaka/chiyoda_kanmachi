@@ -1,7 +1,7 @@
 <?php
 session_start();
-require './libs/functions.php';
-require './libs/mailvars.php';
+require_once __DIR__ . '/libs/functions.php';
+require_once __DIR__ . '/libs/mailvars.php';
 
 date_default_timezone_set( 'Asia/Tokyo' );
 

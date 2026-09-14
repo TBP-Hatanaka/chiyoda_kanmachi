@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './libs/functions.php';
+require_once __DIR__ . '/libs/functions.php';
 
 $_POST = checkInput( $_POST );
 if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {

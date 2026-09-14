@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id( TRUE );
-require './libs/functions.php';
+require_once __DIR__ . '/libs/functions.php';
 
 $name = isset( $_SESSION[ 'name' ] ) ? $_SESSION[ 'name' ] : NULL;
 $company = isset( $_SESSION[ 'company' ] ) ? $_SESSION[ 'company' ] : NULL;
