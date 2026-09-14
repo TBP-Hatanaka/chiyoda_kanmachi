@@ -6,7 +6,10 @@ $header_args = array(
 get_header( null, $header_args );
 ?>
 <article class="main">
-  <section id="mvarea"> <img src="./img/common/mv.jpg" alt="千代田写真"> </section>
+  <section id="mvarea">
+    <img src="<?php the_field('contact_image'); ?>" alt="千代田写真" class="pc">
+  </section>
+  
   <section id="cantainer">
     <div class="wrap">
       <h2><strong><img src="./img/ttl/ttl_inquiry.png" alt="お問い合わせ"></strong></h2>

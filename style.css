@@ -208,6 +208,10 @@ a:hover img {
   margin-right: 1em;
 }
 
+.news-table__text  a {
+  color: #eb6d9a;
+}
+
 .left {
   float: left;
 }

@@ -7,7 +7,7 @@ get_header( null, $header_args );
 ?>
 <article class="main">
   <section id="mvarea">
-    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/mv.jpg' ); ?>" alt="千代田写真">
+    <img src="<?php the_field('privacy_image'); ?>" alt="千代田写真" class="pc">
   </section>
 
   <section id="policy">
