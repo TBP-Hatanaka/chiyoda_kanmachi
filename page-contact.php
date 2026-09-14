@@ -1,10 +1,36 @@
 <?php
+session_start();
+session_regenerate_id( TRUE );
+require './libs/functions.php';
+
+$name = isset( $_SESSION[ 'name' ] ) ? $_SESSION[ 'name' ] : NULL;
+$company = isset( $_SESSION[ 'company' ] ) ? $_SESSION[ 'company' ] : NULL;
+$email = isset( $_SESSION[ 'email' ] ) ? $_SESSION[ 'email' ] : NULL;
+$email_check = isset( $_SESSION[ 'email_check' ] ) ? $_SESSION[ 'email_check' ] : NULL;
+$tel = isset( $_SESSION[ 'tel' ] ) ? $_SESSION[ 'tel' ] : NULL;
+$body = isset( $_SESSION[ 'body' ] ) ? $_SESSION[ 'body' ] : NULL;
+$error = isset( $_SESSION[ 'error' ] ) ? $_SESSION[ 'error' ] : NULL;
+
+$error_name = isset( $error[ 'name' ] ) ? $error[ 'name' ] : NULL;
+$error_company = isset( $error[ 'company' ] ) ? $error[ 'company' ] : NULL;
+$error_email = isset( $error[ 'email' ] ) ? $error[ 'email' ] : NULL;
+$error_email_check = isset( $error[ 'email_check' ] ) ? $error[ 'email_check' ] : NULL;
+$error_tel = isset( $error[ 'tel' ] ) ? $error[ 'tel' ] : NULL;
+$error_tel_format = isset( $error[ 'tel_format' ] ) ? $error[ 'tel_format' ] : NULL;
+$error_body = isset( $error[ 'body' ] ) ? $error[ 'body' ] : NULL;
+
+if ( !isset( $_SESSION[ 'ticket' ] ) ) {
+  $_SESSION[ 'ticket' ] = sha1( uniqid( mt_rand(), TRUE ) );
+}
+$ticket = $_SESSION[ 'ticket' ];
+
 $header_args = array(
     'page_title'   => 'お問い合わせ',
     'current_page' => 'contact',
 );
 get_header( null, $header_args );
 ?>
+
 <article class="main">
   <section id="mvarea">
     <img src="<?php the_field('contact_image'); ?>" alt="千代田写真" class="pc">
