@@ -20,7 +20,7 @@ get_header( null, $header_args );
         <?php if( have_rows('about_contents') ): ?>
           <?php while ( have_rows('about_contents') ) : the_row(); ?>
             <?php if( get_row_layout() == 'about_contents1' ): ?>
-              <p><?php the_sub_field('about_text'); ?></p>
+              <p class="intro_caption"><?php the_sub_field('about_text'); ?></p>
             <?php endif; ?>
             <?php if( get_row_layout() == 'about_contents2' ): ?>
               <div class="flex">
@@ -36,9 +36,24 @@ get_header( null, $header_args );
         <?php endif; ?>
       </div>
     </div>
+    <div class="info">
+      <strong>千代田観光まちづくり実行委員会</strong><br>
+      <ul>
+        <li>構成団体</li>
+        <li>東京商工会議所千代田支部<br>
+          （一社）千代田区観光協会<br>
+          千代田区商工業連合会<br>
+          千代田区商店街連合会</li>
+          <li class="bdr_d1"></li>
+        <li class="bdr_d2"></li>
+        <li>事務局</li>
+        <li>千代田区商工業連合会内</li>
+        <li>所在地</li>
+        <li>〒101-0054　千代田区神田錦町3-21　ちよだプラットフォームスクウェア4F</li>
+      </ul>
+    </div>
   </section>
 </article>
-
 
 <footer class="bg_g">
   <div class="wrap">
