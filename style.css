@@ -1303,7 +1303,7 @@ mediaクエリ【PC】
 }
 @media (min-width: 751px) {
   #about .intro .intro_img {
-    width: 42%;
+    width: 38%;
     margin: 0 3% 0 0;
     text-align: left;
     position: relative;
