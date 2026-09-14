@@ -28,7 +28,7 @@ get_header( null, $header_args );
                   <img class="about_image" src="<?php the_sub_field('about_image2'); ?>" alt="<?php the_sub_field('about_image_alt'); ?>">
                 </div>
                 <div class="intro_txt">
-                  <p><?php the_sub_field('about_text2'); ?></p>
+                  <?php the_sub_field('about_text2'); ?>
                 </div>
               </div>
             <?php endif; ?>
