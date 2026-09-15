@@ -37,50 +37,53 @@
                   ? get_stylesheet_directory_uri() . $news_icons[ $news_type ]
                   : '';
               ?>
-              <tr class="news-table__summary">
-                <td class="news-table__date">
-                  <?php if ( $has_news_url ) : ?>
-                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
-                  <?php else : ?>
-                    <p class="news_link"><?php echo esc_html( $news_date ); ?></p>
-                  <?php endif; ?>
-                </td>
-                <td class="news-table__title">
-                  <?php if ( $has_news_url ) : ?>
-                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
-                  <?php elseif ( 'standard' === $news_type ) : ?>
-                    <p class="news_link news-detail-trigger" role="button" tabindex="0" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>"><?php the_sub_field('index_news3'); ?></p>
-                  <?php else : ?>
-                    <p class="news_link"><?php the_sub_field('index_news3'); ?></p>
-                  <?php endif; ?>
-                </td>
-                <td class="news-table__icon">
-                  <?php if ( 'standard' === $news_type && $news_icon_url ) : ?>
-                    <button class="news-toggle news-detail-trigger" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
-                      <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
-                    </button>
-                  <?php elseif ( $news_icon_url && $has_news_url ) : ?>
-                    <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
-                      <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
-                    </a>
-                  <?php elseif ( $news_icon_url ) : ?>
-                    <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
-                  <?php endif; ?>
-                </td>
-              </tr>
-              <?php if ( 'standard' === $news_type ) : ?>
-                <tr id="<?php echo esc_attr( $news_detail_id ); ?>" class="news-table__detail" hidden>
-                  <td>
+              <?php if ( 'visible' === $news_state ) : ?>
+                <tr class="news-table__summary">
+                  <td class="news-table__date">
+                    <?php if ( $has_news_url ) : ?>
+                      <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php echo esc_html( $news_date ); ?></a>
+                    <?php else : ?>
+                      <p class="news_link"><?php echo esc_html( $news_date ); ?></p>
+                    <?php endif; ?>
                   </td>
-                  <td colspan="2">
-                    <div class="news-table__detail-inner">
-                      <img class="news-table__detail__icon" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/ic_qanda_a.png' ); ?>">
-                      <div class="news-table__detail__div">
-                        <p><?php the_sub_field('index_news4'); ?></p>
-                      </div>
-                    </div>
+                  <td class="news-table__title">
+                    <?php if ( $has_news_url ) : ?>
+                      <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank"><?php the_sub_field('index_news3'); ?></a>
+                    <?php elseif ( 'standard' === $news_type ) : ?>
+                      <p class="news_link news-detail-trigger" role="button" tabindex="0" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>"><?php the_sub_field('index_news3'); ?></p>
+                    <?php else : ?>
+                      <p class="news_link"><?php the_sub_field('index_news3'); ?></p>
+                    <?php endif; ?>
+                  </td>
+                  <td class="news-table__icon">
+                    <?php if ( 'standard' === $news_type && $news_icon_url ) : ?>
+                      <button class="news-toggle news-detail-trigger" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr( $news_detail_id ); ?>" aria-label="詳細を表示">
+                        <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
+                      </button>
+                    <?php elseif ( $news_icon_url && $has_news_url ) : ?>
+                      <a class="news_link" href="<?php echo esc_url( $news_url ); ?>" target="_blank">
+                        <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
+                      </a>
+                    <?php elseif ( $news_icon_url ) : ?>
+                      <img class="news_icon" src="<?php echo esc_url( $news_icon_url ); ?>" alt="">
+                    <?php endif; ?>
                   </td>
                 </tr>
+                <?php if ( 'standard' === $news_type ) : ?>
+                  <tr id="<?php echo esc_attr( $news_detail_id ); ?>" class="news-table__detail" hidden>
+                    <td>
+                    </td>
+                    <td colspan="2">
+                      <div class="news-table__detail-inner">
+                        <img class="news-table__detail__icon" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/common/ic_qanda_a.png' ); ?>">
+                        <div class="news-table__detail__div">
+                          <p><?php the_sub_field('index_news4'); ?></p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                <?php endif; ?>
+              <?php else : ?>
               <?php endif; ?>
             <?php endwhile; ?>
           </tbody>
@@ -96,20 +99,26 @@
       <ul class="flex">
         <?php if( have_rows('index_event') ): ?>
           <?php while ( have_rows('index_event') ) : the_row(); ?>
-            <?php $event_url = get_sub_field( 'index_event4' ); ?>
-            <li>
-              <?php if ( $event_url ) : ?>
-                <a href="<?php echo esc_url( $event_url ); ?>" target="_blank">
+            <?php
+            $event_state = get_sub_field( 'index_event0' );
+            $event_url = get_sub_field( 'index_event4' );
+            ?>
+            <?php if ( 'visible' === $event_state ) : ?>
+              <li>
+                <?php if ( $event_url ) : ?>
+                  <a href="<?php echo esc_url( $event_url ); ?>" target="_blank">
+                    <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
+                    <h4><?php the_sub_field('index_event1'); ?></h4>
+                    <p><?php the_sub_field('index_event2'); ?></p>
+                  </a>
+                <?php else : ?>
                   <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
                   <h4><?php the_sub_field('index_event1'); ?></h4>
                   <p><?php the_sub_field('index_event2'); ?></p>
-                </a>
-              <?php else : ?>
-                <img src="<?php the_sub_field('index_event3'); ?>" alt="<?php the_sub_field('index_event1'); ?>">
-                <h4><?php the_sub_field('index_event1'); ?></h4>
-                <p><?php the_sub_field('index_event2'); ?></p>
-              <?php endif; ?>
-            </li>
+                <?php endif; ?>
+              </li>
+            <?php else : ?>
+            <?php endif; ?>
           <?php endwhile; ?>
       <?php endif; ?>
     </ul>
