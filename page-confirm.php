@@ -6,7 +6,7 @@ require_once __DIR__ . '/libs/functions.php';
 
 $_POST = checkInput( $_POST );
 
-$name = isset( $_POST[ 'name' ] ) ? $_POST[ 'name' ] : NULL;
+$name = isset( $_POST[ 'contact_name' ] ) ? $_POST[ 'contact_name' ] : NULL;
 $company = isset( $_POST[ 'company' ] ) ? $_POST[ 'company' ] : NULL;
 $email = isset( $_POST[ 'email' ] ) ? $_POST[ 'email' ] : NULL;
 $email_check = isset( $_POST[ 'email_check' ] ) ? $_POST[ 'email_check' ] : NULL;

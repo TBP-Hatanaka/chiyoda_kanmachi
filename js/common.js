@@ -73,19 +73,44 @@ $(document).ready(function() {
   $('#main_contact').on('submit', function (event) {
     var $form = $(this)
     var $firstInvalid = null
+    var $tel = $('#tel')
+    var $email = $('#email')
+    var $emailCheck = $('#email_check')
+    var telValue = $.trim($tel.val())
+    var emailValue = $.trim($email.val())
+    var emailCheckValue = $.trim($emailCheck.val())
+    var telDigits = telValue.replace(/\D/g, '')
+    var telPattern = /^[0-9()\-.\s]+$/
+    var emailPattern = /^[a-z0-9+_-]+(?:\.[a-z0-9+_-]+)*@(?:[a-z0-9-]+\.)+[a-z]{2,63}$/i
 
-    $form.find('span.error').removeClass('is-visible')
+    function setInvalid($field, errorClass) {
+      $field.siblings('span.' + errorClass).first().addClass('is-visible')
+      if ($firstInvalid === null) {
+        $firstInvalid = $field
+      }
+    }
+
+    $form.find('span.error, span.error2, span.error3').removeClass('is-visible')
 
     $form.find('.required').each(function () {
       var $field = $(this)
 
       if ($.trim($field.val()) === '') {
-        $field.siblings('span.error').first().addClass('is-visible')
-        if ($firstInvalid === null) {
-          $firstInvalid = $field
-        }
+        setInvalid($field, 'error')
       }
     })
+
+    if (telValue !== '' && (!telPattern.test(telValue) || telDigits.length < 10 || telDigits.length > 11)) {
+      setInvalid($tel, 'error2')
+    }
+
+    if (emailValue !== '' && !emailPattern.test(emailValue)) {
+      setInvalid($email, 'error2')
+    }
+
+    if (emailValue !== '' && emailCheckValue !== '' && emailValue !== emailCheckValue) {
+      setInvalid($emailCheck, 'error3')
+    }
 
     if ($firstInvalid !== null) {
       event.preventDefault()
@@ -93,10 +118,15 @@ $(document).ready(function() {
     }
   })
 
-  $('#main_contact .required').on('input change', function () {
-    if ($.trim($(this).val()) !== '') {
-      $(this).siblings('span.error').first().removeClass('is-visible')
+  $('#main_contact input, #main_contact textarea').on('input change', function () {
+    var $field = $(this)
+
+    if ($.trim($field.val()) !== '') {
+      $field.siblings('span.error').removeClass('is-visible')
     }
+
+    $field.siblings('span.error2').removeClass('is-visible')
+    $('#email_check').siblings('span.error3').removeClass('is-visible')
   })
 
 

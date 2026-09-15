@@ -50,7 +50,7 @@ get_header( null, $header_args );
               <label for="name">お名前<span class="req">※</span></label>
             </th>
             <td>
-              <input type="text" class="validate  required" id="name" name="name" value="">
+              <input type="text" class="validate  required" id="name" name="contact_name" value="">
               <span class="error">*お名前は必須項目です。</span>
             </td>
           </tr>
@@ -68,7 +68,7 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class="validate max30 tel " id="tel" name="tel" value="">
-              <span class="error">*電話番号は必須項目です。 *電話番号の形式が正しくありません。</span>
+              <span class="error2">*電話番号の形式が正しくありません。</span>
             </td>
           </tr>
           <tr>
@@ -77,7 +77,8 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class=" validate mail required" id="email" name="email" value="">
-              <span class="error">*メールアドレスは必須項目です。*メールアドレスの形式が正しくありません。</span>
+              <span class="error">*メールアドレスは必須項目です。</span>
+              <span class="error2">*メールアドレスの形式が正しくありません。</span>
             </td>
           </tr>
           <tr>
@@ -86,7 +87,8 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class=" validate email_check required" id="email_check" name="email_check"  value="">
-              <span class="error">*メールアドレスが一致しません。</span>
+              <span class="error">*確認用メールアドレスは必須項目です。</span>
+              <span class="error3">*メールアドレスが一致しません。</span>
             </td>
           </tr>
           <tr>

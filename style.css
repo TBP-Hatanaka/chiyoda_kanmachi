@@ -1471,12 +1471,16 @@ mediaクエリ【スマホ】
   font-size: .8em;
   color: #eb6d9a;
 }
-#inquiry .main span.error {
+#inquiry .main span.error,
+#inquiry .main span.error2,
+#inquiry .main span.error3 {
   color: #dd3344;
   display: none;
   margin-top: .3em;
 }
-#inquiry .main span.error.is-visible {
+#inquiry .main span.error.is-visible,
+#inquiry .main span.error2.is-visible,
+#inquiry .main span.error3.is-visible {
   display: block;
 }
 #inquiry .btn {
