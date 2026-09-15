@@ -24,6 +24,7 @@
           <tbody>
             <?php while ( have_rows( 'index_news' ) ) : the_row(); ?>
               <?php
+              $news_state = get_sub_field( 'index_news0' );
               $news_type = get_sub_field( 'index_news1' );
               $news_date = get_sub_field( 'index_news2' );
               $news_title = get_sub_field( 'index_news3' );

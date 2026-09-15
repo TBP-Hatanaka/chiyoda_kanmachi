@@ -62,13 +62,6 @@ $_SESSION[ 'tel' ] = $tel;
 $_SESSION[ 'body' ] = $body;
 $_SESSION[ 'error' ] = $error;
 
-if ( count( $error ) > 0 ) {
-  $url = home_url( '/confirm/' );
-  header( 'HTTP/1.1 303 See Other' );
-  header( 'location: ' . $url );
-  exit;
-}
-
 $header_args = array(
     'page_title'   => 'お問い合わせ確認',
     'current_page' => 'confirm',
