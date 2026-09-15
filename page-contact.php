@@ -2,6 +2,7 @@
 if ( PHP_SESSION_ACTIVE !== session_status() ) {
   session_start();
 }
+require_once __DIR__ . '/libs/functions.php';
 
 $name = isset( $_SESSION[ 'name' ] ) ? $_SESSION[ 'name' ] : NULL;
 $company = isset( $_SESSION[ 'company' ] ) ? $_SESSION[ 'company' ] : NULL;
