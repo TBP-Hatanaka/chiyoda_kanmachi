@@ -36,8 +36,17 @@
               $news_icon_url = isset( $news_icons[ $news_type ] )
                   ? get_stylesheet_directory_uri() . $news_icons[ $news_type ]
                   : '';
+              $news_publish_timestamp = is_string( $news_date )
+                  ? strtotime( str_replace( '/', '-', trim( $news_date ) ) )
+                  : false;
+              $is_news_visible = 'visible' === $news_state
+                  || (
+                      'reserved' === $news_state
+                      && false !== $news_publish_timestamp
+                      && date( 'Ymd', $news_publish_timestamp ) <= current_time( 'Ymd' )
+                  );
               ?>
-              <?php if ( 'visible' === $news_state ) : ?>
+              <?php if ( $is_news_visible ) : ?>
                 <tr class="news-table__summary">
                   <td class="news-table__date">
                     <?php if ( $has_news_url ) : ?>
