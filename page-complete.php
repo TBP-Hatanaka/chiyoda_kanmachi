@@ -9,18 +9,6 @@ date_default_timezone_set( 'Asia/Tokyo' );
 
 $_POST = checkInput( $_POST );
 
-if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {
-  $ticket = $_POST[ 'ticket' ];
-  if ( $ticket !== $_SESSION[ 'ticket' ] ) {
-    die( 'Access denied' );
-  }
-} else {
-  $url = home_url( '/contact/' );
-  header( 'HTTP/1.1 303 See Other' );
-  header( 'location: ' . $url );
-  exit; 
-}
-
 $name = h( $_SESSION[ 'name' ] );
 $company = h( $_SESSION[ 'company' ] );
 $email = h( $_SESSION[ 'email' ] );

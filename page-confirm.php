@@ -5,14 +5,6 @@ if ( PHP_SESSION_ACTIVE !== session_status() ) {
 require_once __DIR__ . '/libs/functions.php';
 
 $_POST = checkInput( $_POST );
-if ( isset( $_POST[ 'ticket' ], $_SESSION[ 'ticket' ] ) ) {
-  $ticket = $_POST[ 'ticket' ];
-  if ( $ticket !== $_SESSION[ 'ticket' ] ) {
-    die( 'Access Denied!' );
-  }
-} else {
-  die( 'Access Denied（直接このページにはアクセスできません）' );
-}
 
 $name = isset( $_POST[ 'name' ] ) ? $_POST[ 'name' ] : NULL;
 $company = isset( $_POST[ 'company' ] ) ? $_POST[ 'company' ] : NULL;
