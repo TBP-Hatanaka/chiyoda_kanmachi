@@ -69,7 +69,7 @@ $header_args = array(
 get_header( null, $header_args );
 ?>
 <article class="main">
-  <section id="cantainer">
+  <section id="container">
     <div class="wrap">
       <h2><strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_inquiry2.png' ); ?>" alt="お問い合わせ確認"></strong></h2>
       <p>以下の内容でよろしければ「送信する」をクリックしてください。<br>内容を変更する場合は「戻る」をクリックして入力画面にお戻りください。</p>

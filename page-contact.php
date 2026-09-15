@@ -37,7 +37,7 @@ get_header( null, $header_args );
     <img src="<?php the_field('contact_image'); ?>" alt="千代田写真" class="pc">
   </section>
 
-  <section id="cantainer">
+  <section id="container">
     <div class="wrap">
       <h2>
         <strong><img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/ttl/ttl_contact.png' ); ?>" alt="お問い合わせ"></strong>
