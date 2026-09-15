@@ -1485,6 +1485,10 @@ mediaクエリ【スマホ】
 #inquiry .main span.error3.is-visible {
   display: block;
 }
+#confirm .confirm {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 #inquiry .btn, #confirm .btn {
   color: #fff;
   background: #eb6d9a;
@@ -1492,17 +1496,17 @@ mediaクエリ【スマホ】
   padding: .8em 1em .8em 1em;
   border: 1px solid #eb6d9a;
   border-radius: .3em;
-    -moz-border-radius: .3em;
-    -webkit-border-radius: .3em;
+  -moz-border-radius: .3em;
+  -webkit-border-radius: .3em;
   cursor: pointer;
-    min-width:10em
+  min-width:10em;
 }
 #inquiry .btn:hover {
   color: #eb6d9a;
   background: #fff;
 }
 #inquiry .btn-secondary{
-    margin-bottom: 1em
+    margin-bottom: 1em;
 }
 #inquiry input[type="text"],#inquiry textarea {
   border-radius: .2em;
