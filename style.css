@@ -1441,29 +1441,31 @@ mediaクエリ【スマホ】
 /* **********************************************************
 ■　Inquiry
 ********************************************************** */
-#inquiry #container .wrap {
+#inquiry #container .wrap, #confirm #container .wrap {
   width: 1024px;
 }
-#inquiry h2 img {
+#inquiry h2 img, #complete h2 img {
   filter: brightness(0%);
 }
-#inquiry .main h3 {
+#inquiry .main h3, #confirm .main h3, #complete .main h3 {
     font-size:1.2rem;
 }
-#inquiry .main p {
+#inquiry .main p, #confirm .main p, #complete .main p {
   font-size: 1rem;
   font-weight: 300;
 }
-#inquiry table {
+#inquiry table, #confirm table {
   width: 100%;
   margin: 2rem auto;
   font-size: 1rem;
 }
-#inquiry table th, #inquiry table td {
+#inquiry table th, #inquiry table td,
+#confirm table th, #confirm table td {
   text-align: left;
   padding: 0.8em 1em .8em;
+  background-color: #ffffff;
 }
-#inquiry table th {
+#inquiry table th, #confirm table th {
   font-weight: 500;
 }
 #inquiry .main span.req {
@@ -1483,7 +1485,7 @@ mediaクエリ【スマホ】
 #inquiry .main span.error3.is-visible {
   display: block;
 }
-#inquiry .btn {
+#inquiry .btn, #confirm .btn {
   color: #fff;
   background: #eb6d9a;
   font-size: 18px;
