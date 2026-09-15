@@ -51,7 +51,7 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class="validate  required" id="name" name="name" value="">
-              <span class="error">正しい名前を記入してください。</span>
+              <span class="error">*お名前は必須項目です。</span>
             </td>
           </tr>
           <tr>
@@ -60,7 +60,6 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class=" validate " id="company" name="company"  value="">
-              <span class="error">正しい企業名を記入してください。</span>
             </td>
           </tr>
           <tr>
@@ -69,7 +68,7 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class="validate max30 tel " id="tel" name="tel" value="">
-              <span class="error">正しい電話番号を記入してください。</span>
+              <span class="error">*電話番号は必須項目です。 *電話番号の形式が正しくありません。</span>
             </td>
           </tr>
           <tr>
@@ -78,7 +77,7 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class=" validate mail required" id="email" name="email" value="">
-              <span class="error">正しいメールアドレスを記入してください。</span>
+              <span class="error">*メールアドレスは必須項目です。*メールアドレスの形式が正しくありません。</span>
             </td>
           </tr>
           <tr>
@@ -87,7 +86,7 @@ get_header( null, $header_args );
             </th>
             <td>
               <input type="text" class=" validate email_check required" id="email_check" name="email_check"  value="">
-              <span class="error">正しいメールアドレスを記入してください。</span>
+              <span class="error">*メールアドレスが一致しません。</span>
             </td>
           </tr>
           <tr>
@@ -97,7 +96,7 @@ get_header( null, $header_args );
             <td>
               <p>500文字まで</p>
               <textarea class=" validate max500 required" id="body" name="body"  rows="3"></textarea>
-              <span class="error">正しい問い合わせ内容を記入してください。</span>
+              <span class="error">*内容は必須項目です。</span>
             </td>
           </tr>
         </table>

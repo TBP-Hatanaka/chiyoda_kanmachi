@@ -1473,8 +1473,11 @@ mediaクエリ【スマホ】
 }
 #inquiry .main span.error {
   color: #dd3344;
-    display: block;
-    margin-top: .3em;
+  display: none;
+  margin-top: .3em;
+}
+#inquiry .main span.error.is-visible {
+  display: block;
 }
 #inquiry .btn {
   color: #fff;

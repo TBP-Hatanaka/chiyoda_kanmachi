@@ -63,11 +63,41 @@ $(document).ready(function() {
 	var ua = navigator.userAgent.toLowerCase()
 	var isMobile = /iphone/.test(ua) || /android(.+)?mobile/.test(ua)
 
-	if(!isMobile) {
+  if(!isMobile) {
 		$('a[href^="tel:"]').on('click', function(e) {
 			e.preventDefault()
 		})
 	}
+
+  // お問い合わせフォームの必須項目チェック
+  $('#main_contact').on('submit', function (event) {
+    var $form = $(this)
+    var $firstInvalid = null
+
+    $form.find('span.error').removeClass('is-visible')
+
+    $form.find('.required').each(function () {
+      var $field = $(this)
+
+      if ($.trim($field.val()) === '') {
+        $field.siblings('span.error').first().addClass('is-visible')
+        if ($firstInvalid === null) {
+          $firstInvalid = $field
+        }
+      }
+    })
+
+    if ($firstInvalid !== null) {
+      event.preventDefault()
+      $firstInvalid.focus()
+    }
+  })
+
+  $('#main_contact .required').on('input change', function () {
+    if ($.trim($(this).val()) !== '') {
+      $(this).siblings('span.error').first().removeClass('is-visible')
+    }
+  })
 
 
 	// ページトップ
