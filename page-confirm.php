@@ -4,7 +4,25 @@ if ( PHP_SESSION_ACTIVE !== session_status() ) {
 }
 require_once __DIR__ . '/libs/functions.php';
 
+// 入力画面からの正規の POST 以外では確認画面を表示しない。
+if ( 'POST' !== $_SERVER[ 'REQUEST_METHOD' ] ) {
+  wp_safe_redirect( home_url( '/contact/' ) );
+  exit;
+}
+
 $_POST = checkInput( $_POST );
+
+$posted_ticket = isset( $_POST[ 'ticket' ] ) ? (string) $_POST[ 'ticket' ] : '';
+$session_ticket = isset( $_SESSION[ 'ticket' ] ) ? (string) $_SESSION[ 'ticket' ] : '';
+
+if (
+  '' === $posted_ticket ||
+  '' === $session_ticket ||
+  !hash_equals( $session_ticket, $posted_ticket )
+) {
+  wp_safe_redirect( home_url( '/contact/' ) );
+  exit;
+}
 
 $name = isset( $_POST[ 'contact_name' ] ) ? $_POST[ 'contact_name' ] : NULL;
 $company = isset( $_POST[ 'company' ] ) ? $_POST[ 'company' ] : NULL;
@@ -62,6 +80,13 @@ $_SESSION[ 'tel' ] = $tel;
 $_SESSION[ 'body' ] = $body;
 $_SESSION[ 'error' ] = $error;
 
+if ( !empty( $error ) ) {
+  wp_safe_redirect( home_url( '/contact/' ) );
+  exit;
+}
+
+$ticket = $session_ticket;
+
 $header_args = array(
     'page_title'   => 'お問い合わせ確認',
     'current_page' => 'confirm',
@@ -78,23 +103,23 @@ get_header( null, $header_args );
           <caption>ご入力内容</caption>
           <tr>
             <th>お名前</th>
-            <td><p><?php echo h($name); ?></p></td>
+            <td><p><?php echo hescape($name); ?></p></td>
           </tr>
           <tr>
             <th>企業名</th>
-            <td><p><?php echo h($company); ?></p></td>
+            <td><p><?php echo hescape($company); ?></p></td>
           </tr>
           <tr>
             <th>メールアドレス</th>
-            <td><p><?php echo h($email); ?></p></td>
+            <td><p><?php echo hescape($email); ?></p></td>
           </tr>
           <tr>
             <th>電話番号</th>
-            <td><p><?php echo h($tel); ?></p></td>
+            <td><p><?php echo hescape($tel); ?></p></td>
           </tr>
           <tr>
             <th>お問い合わせ内容</th>
-            <td><p><?php echo nl2br(h($body)); ?></p></td>
+            <td><p><?php echo nl2br(hescape($body)); ?></p></td>
           </tr>
         </table>
       </div>

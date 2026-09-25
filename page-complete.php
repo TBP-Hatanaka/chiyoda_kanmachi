@@ -7,13 +7,39 @@ require_once __DIR__ . '/libs/mailvars.php';
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
+// 完了ページへの直接アクセスや再読み込みではメールを送信しない。
+if ( 'POST' !== $_SERVER[ 'REQUEST_METHOD' ] ) {
+  wp_safe_redirect( home_url( '/contact/' ) );
+  exit;
+}
+
 $_POST = checkInput( $_POST );
 
-$name = h( $_SESSION[ 'name' ] );
-$company = h( $_SESSION[ 'company' ] );
-$email = h( $_SESSION[ 'email' ] );
-$tel = h( $_SESSION[ 'tel' ] );
-$body = h( $_SESSION[ 'body' ] );
+$posted_ticket = isset( $_POST[ 'ticket' ] ) ? (string) $_POST[ 'ticket' ] : '';
+$session_ticket = isset( $_SESSION[ 'ticket' ] ) ? (string) $_SESSION[ 'ticket' ] : '';
+
+$name = isset( $_SESSION[ 'name' ] ) ? trim( (string) $_SESSION[ 'name' ] ) : '';
+$company = isset( $_SESSION[ 'company' ] ) ? trim( (string) $_SESSION[ 'company' ] ) : '';
+$email = isset( $_SESSION[ 'email' ] ) ? trim( (string) $_SESSION[ 'email' ] ) : '';
+$tel = isset( $_SESSION[ 'tel' ] ) ? trim( (string) $_SESSION[ 'tel' ] ) : '';
+$body = isset( $_SESSION[ 'body' ] ) ? trim( (string) $_SESSION[ 'body' ] ) : '';
+
+$is_valid_submission = (
+  '' !== $posted_ticket &&
+  '' !== $session_ticket &&
+  hash_equals( $session_ticket, $posted_ticket ) &&
+  '' !== $name &&
+  false !== filter_var( $email, FILTER_VALIDATE_EMAIL ) &&
+  '' !== $body
+);
+
+if ( !$is_valid_submission ) {
+  wp_safe_redirect( home_url( '/contact/' ) );
+  exit;
+}
+
+// 送信処理より先にチケットを破棄し、連打・再送信を防止する。
+unset( $_SESSION[ 'ticket' ] );
 
 $mail_body = 'コンタクトページからのお問い合わせ' . "\n\n";
 $mail_body .= date( "Y年m月d日 H時i分" ) . "\n\n";
@@ -26,12 +52,14 @@ $mail_body .= "＜お問い合わせ内容＞" . "\n" . $body;
 //-------- sendmail（mb_send_mail）を使ったメールの送信処理------------
 
 $mailTo = mb_encode_mimeheader(MAIL_TO_NAME) ."<" . MAIL_TO. ">";
+$subject = 'Webサイトからのお問い合わせ';
 
 $returnMail = MAIL_RETURN_PATH; //
 mb_language( 'ja' );
 mb_internal_encoding( 'UTF-8' );
  
-$header = "From: " . mb_encode_mimeheader($name) ."<" . $email. ">";
+$header = "From: " . mb_encode_mimeheader( MAIL_TO_NAME ) . " <" . MAIL_TO . ">\r\n";
+$header .= "Reply-To: " . $email;
  
 if ( ini_get( 'safe_mode' ) ) {
   $result = mb_send_mail( $mailTo, $subject, $mail_body, $header );
@@ -83,7 +111,7 @@ get_header( null, $header_args );
         <p>送信完了いたしました。</p>
         <?php if ( $show_autoresponse_msg ): ?>
           <?php if ( $result2 ): ?>
-            <p>確認の自動返信メールを <?php echo $email; ?> へお送りいたしました。</p>
+            <p>確認の自動返信メールを <?php echo hescape( $email ); ?> へお送りいたしました。</p>
           <?php else: ?>
             <p>確認の自動返信メールを送信できませんでした。</p>
           <?php endif; ?>
